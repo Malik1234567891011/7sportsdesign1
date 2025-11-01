@@ -1,0 +1,295 @@
+/* ================================
+   FAQ Page Styles
+   ================================ */
+
+/* Fix for page hero overlap - already handled by find-program.css page-hero-small class */
+
+/* Search Section */
+.faq-search-section {
+    padding: 3rem 0;
+    background: white;
+}
+
+.search-wrapper {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    color: #999;
+    pointer-events: none;
+}
+
+.faq-search-input {
+    width: 100%;
+    padding: 1.25rem 1.5rem 1.25rem 4rem;
+    border: 2px solid var(--accent-gray);
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    background: var(--warm-white);
+}
+
+.faq-search-input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    background: white;
+    box-shadow: var(--shadow-md);
+}
+
+.faq-search-input::placeholder {
+    color: #999;
+}
+
+/* FAQ Content */
+.faq-content-section {
+    padding: 2rem 0 5rem;
+    background: var(--accent-gray);
+}
+
+.faq-category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: var(--deep-charcoal);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--primary-red);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Accordion Items */
+.faq-content-section .accordion-item {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-content-section .accordion-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.faq-content-section .accordion-item.highlight {
+    border: 2px solid var(--support-yellow);
+    box-shadow: 0 0 0 3px rgba(246, 196, 67, 0.2);
+}
+
+.faq-content-section .accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.faq-content-section .accordion-header span:first-child {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    line-height: 1.4;
+    padding-right: 1rem;
+}
+
+.faq-content-section .accordion-item.active .accordion-header {
+    background: var(--warm-white);
+}
+
+.faq-content-section .accordion-icon {
+    font-size: 1.5rem;
+    color: var(--primary-red);
+    transition: var(--transition);
+    font-weight: 300;
+    flex-shrink: 0;
+}
+
+.faq-content-section .accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.faq-content-section .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.faq-content-section .accordion-inner {
+    padding: 0 1.5rem 1.5rem;
+}
+
+.faq-content-section .accordion-inner p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.faq-content-section .accordion-inner ul {
+    margin: 1rem 0 1rem 1.5rem;
+    list-style: disc;
+}
+
+.faq-content-section .accordion-inner li {
+    margin-bottom: 0.5rem;
+    color: #666;
+    line-height: 1.7;
+}
+
+.faq-content-section .accordion-inner a {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.faq-content-section .accordion-inner a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Suggestion */
+.contact-suggestion {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-red) 0%, #a02020 100%);
+    color: white;
+    text-align: center;
+}
+
+.suggestion-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.suggestion-content h2 {
+    margin-bottom: 1rem;
+}
+
+.suggestion-content p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.contact-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-options .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-options .btn-primary {
+    background: white;
+    color: var(--primary-red);
+}
+
+.contact-options .btn-primary:hover {
+    background: var(--support-yellow);
+    color: var(--deep-charcoal);
+}
+
+.contact-options .btn-secondary {
+    border-color: white;
+    color: white;
+}
+
+.contact-options .btn-secondary:hover {
+    background: white;
+    color: var(--primary-red);
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+}
+
+.no-results h3 {
+    margin-bottom: 1rem;
+    color: var(--deep-charcoal);
+}
+
+.no-results p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .faq-search-input {
+        font-size: 1rem;
+        padding: 1rem 1rem 1rem 3.5rem;
+    }
+    
+    .search-icon {
+        width: 20px;
+        height: 20px;
+        left: 1rem;
+    }
+    
+    .category-title {
+        font-size: 1.4rem;
+    }
+    
+    .faq-content-section .accordion-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .faq-content-section .accordion-header span:first-child {
+        font-size: 1rem;
+    }
+    
+    .faq-content-section .accordion-inner {
+        padding: 0 1.25rem 1.25rem;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+    }
+    
+    .contact-options .btn {
+        width: 100%;
+    }
+}
+
+/* Smooth show/hide animation for filtered items */
+.faq-content-section .accordion-item {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

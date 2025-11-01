@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>7Sports - Play. Learn. Grow.</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <span class="logo-number">7</span>
+                        <span class="logo-text">Sports</span>
+                    </div>
+                    <nav class="desktop-nav">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="programs.html" class="nav-link">Programs</a>
+                        <a href="find-program.html" class="nav-link"
+                            >Find My Program</a
+                        >
+                        <a href="locations.html" class="nav-link">Locations</a>
+                        <a href="news.html" class="nav-link">News</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </nav>
+                    <div class="language-toggle">
+                        <button class="lang-btn active">EN</button>
+                        <span class="lang-divider">|</span>
+                        <button class="lang-btn">FR</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/hero-video.mp4" type="video/mp4" />
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title slide-in-left">Play. Learn. Grow.</h1>
+                <p
+                    class="hero-subtitle slide-in-left"
+                    style="animation-delay: 0.2s"
+                >
+                    Where kids discover teamwork through sport
+                </p>
+                <div
+                    class="hero-buttons slide-in-left"
+                    style="animation-delay: 0.4s"
+                >
+                    <a href="find-program.html" class="btn btn-primary"
+                        >Find a Program</a
+                    >
+                    <a href="programs.html" class="btn btn-secondary"
+                        >Explore Our Sports</a
+                    >
+                </div>
+            </div>
+            <!-- Fallback image when video isn't available -->
+            <div class="hero-fallback"></div>
+        </section>
+
+        <!-- Quick Highlights Strip -->
+        <section class="highlights">
+            <div class="container">
+                <div class="highlights-grid">
+                    <div class="highlight-card fade-in">
+                        <div class="highlight-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"
+                                ></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Inclusive Programs</h3>
+                        <p>Every child belongs on the field</p>
+                    </div>
+                    <div
+                        class="highlight-card fade-in"
+                        style="animation-delay: 0.2s"
+                    >
+                        <div class="highlight-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                                <polyline points="2 12 12 17 22 12"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Expert Coaches</h3>
+                        <p>Trained to inspire and develop skills</p>
+                    </div>
+                    <div
+                        class="highlight-card fade-in"
+                        style="animation-delay: 0.4s"
+                    >
+                        <div class="highlight-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                            >
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <h3>Safe & Fun Environment</h3>
+                        <p>Building confidence through play</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Preview Carousel -->
+        <section class="program-preview">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">
+                    Choose the perfect sport for your child
+                </p>
+
+                <div class="carousel">
+                    <button
+                        class="carousel-btn carousel-prev"
+                        aria-label="Previous"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="program-card">
+                                <div
+                                    class="program-image"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #d62828 0%,
+                                            #f77f00 100%
+                                        );
+                                    "
+                                ></div>
+                                <div class="program-content">
+                                    <h3>Soccer</h3>
+                                    <p class="program-age">Ages 2-12</p>
+                                    <p class="program-description">
+                                        Build coordination and teamwork with the
+                                        beautiful game
+                                    </p>
+                                    <a
+                                        href="programs.html#soccer"
+                                        class="btn btn-small"
+                                        >Learn More</a
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="program-card">
+                                <div
+                                    class="program-image"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #2b59c3 0%,
+                                            #0077b6 100%
+                                        );
+                                    "
+                                ></div>
+                                <div class="program-content">
+                                    <h3>Dek Hockey</h3>
+                                    <p class="program-age">Ages 4-12</p>
+                                    <p class="program-description">
+                                        Fast-paced action and skill development
+                                        on deck
+                                    </p>
+                                    <a
+                                        href="programs.html#hockey"
+                                        class="btn btn-small"
+                                        >Learn More</a
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="program-card">
+                                <div
+                                    class="program-image"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #f6c443 0%,
+                                            #ee9b00 100%
+                                        );
+                                    "
+                                ></div>
+                                <div class="program-content">
+                                    <h3>Multi-Sport</h3>
+                                    <p class="program-age">Ages 2-6</p>
+                                    <p class="program-description">
+                                        Explore different sports and find your
+                                        favorite
+                                    </p>
+                                    <a
+                                        href="programs.html#multisport"
+                                        class="btn btn-small"
+                                        >Learn More</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="carousel-btn carousel-next"
+                        aria-label="Next"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly News Section -->
+        <section class="weekly-news">
+            <div class="container">
+                <h2 class="section-title slide-in-up">This Week at 7Sports</h2>
+                <p class="section-subtitle">
+                    Latest updates, highlights, and stories from our community
+                </p>
+
+                <div class="news-carousel">
+                    <button
+                        class="carousel-btn carousel-prev-news"
+                        aria-label="Previous"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="news-carousel-container">
+                        <div class="news-carousel-track">
+                            <article class="news-card">
+                                <div class="news-image">
+                                    <div
+                                        class="news-image-placeholder"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #d62828 0%,
+                                                #f77f00 100%
+                                            );
+                                        "
+                                    ></div>
+                                    <span class="news-category">Event</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-date">Oct 21, 2025</span>
+                                    <h3>Spring Soccer Tournament Recap</h3>
+                                    <p class="news-excerpt">
+                                        Amazing turnout at our annual tournament
+                                        with over 200 kids participating and
+                                        celebrating teamwork!
+                                    </p>
+                                    <a
+                                        href="news.html#article-1"
+                                        class="news-link"
+                                        >Read More →</a
+                                    >
+                                </div>
+                            </article>
+
+                            <article class="news-card">
+                                <div class="news-image">
+                                    <div
+                                        class="news-image-placeholder"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #2b59c3 0%,
+                                                #0077b6 100%
+                                            );
+                                        "
+                                    ></div>
+                                    <span class="news-category">Camp</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-date">Oct 18, 2025</span>
+                                    <h3>Summer Camp Registration Opens</h3>
+                                    <p class="news-excerpt">
+                                        Early bird registration is now open for
+                                        our exciting summer programs across all
+                                        locations.
+                                    </p>
+                                    <a
+                                        href="news.html#article-2"
+                                        class="news-link"
+                                        >Read More →</a
+                                    >
+                                </div>
+                            </article>
+
+                            <article class="news-card">
+                                <div class="news-image">
+                                    <div
+                                        class="news-image-placeholder"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #f6c443 0%,
+                                                #ee9b00 100%
+                                            );
+                                        "
+                                    ></div>
+                                    <span class="news-category">Community</span>
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-date">Oct 15, 2025</span>
+                                    <h3>New Location Opening in Laval</h3>
+                                    <p class="news-excerpt">
+                                        We're thrilled to announce our newest
+                                        facility opening this fall with
+                                        state-of-the-art equipment.
+                                    </p>
+                                    <a
+                                        href="news.html#article-3"
+                                        class="news-link"
+                                        >Read More →</a
+                                    >
+                                </div>
+                            </article>
+
+                            <article class="news-card">
+                                <div class="news-image">
+                                    <div
+                                        class="news-image-placeholder"
+                                        style="
+                                            background: linear-gradient(
+                                                135deg,
+                                                #2a9d8f 0%,
+                                                #e9c46a 100%
+                                            );
+                                        "
+                                    ></div>
+                                    <span class="news-category"
+                                        >Announcement</span
+                                    >
+                                </div>
+                                <div class="news-content">
+                                    <span class="news-date">Oct 12, 2025</span>
+                                    <h3>Coach of the Month: Emma Laurent</h3>
+                                    <p class="news-excerpt">
+                                        Celebrating our incredible lead soccer
+                                        coach for her dedication and positive
+                                        impact on young athletes.
+                                    </p>
+                                    <a
+                                        href="news.html#article-4"
+                                        class="news-link"
+                                        >Read More →</a
+                                    >
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <button
+                        class="carousel-btn carousel-next-news"
+                        aria-label="Next"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="news-cta">
+                    <a href="news.html" class="btn btn-primary"
+                        >View All News & Highlights →</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- About Teaser -->
+        <section class="about-teaser">
+            <div class="container">
+                <div class="about-teaser-content">
+                    <h2>Building Champions Since 2018</h2>
+                    <p>
+                        For 7 years, 7Sports has been helping kids discover
+                        teamwork through play. We believe every child deserves
+                        the chance to experience the joy of sport in a
+                        supportive, non-competitive environment.
+                    </p>
+                    <a href="about.html" class="btn btn-primary"
+                        >Learn More About Us</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section class="footer-cta">
+            <div class="container">
+                <h2>Ready to Register?</h2>
+                <a href="find-program.html" class="btn btn-primary-large"
+                    >Find Your Program →</a
+                >
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <span class="logo-number">7</span>
+                            <span class="logo-text">Sports</span>
+                        </div>
+                        <p>
+                            Building confidence, teamwork, and skills through
+                            sport.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Programs</h4>
+                        <a href="programs.html#soccer">Soccer</a>
+                        <a href="programs.html#hockey">Dek Hockey</a>
+                        <a href="programs.html#multisport">Multi-Sport</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="locations.html">Locations</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <a href="mailto:info@7sports.com">info@7sports.com</a>
+                        <a href="tel:+15551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 7Sports. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item active">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="find-program.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Find Program</span>
+            </a>
+            <a href="#contact" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                </svg>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <!-- Floating Action Button -->
+        <div class="fab">
+            <button class="fab-button" aria-label="Contact us">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                </svg>
+            </button>
+            <div class="fab-menu">
+                <a href="tel:+15551234567" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                    </svg>
+                    Call
+                </a>
+                <a href="mailto:info@7sports.com" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        ></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Bouncing Ball Motion Element -->
+        <div class="motion-ball"></div>
+
+        <script src="script.js"></script>
+    </body>
+</html>

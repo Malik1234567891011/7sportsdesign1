@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Our Locations - 7Sports</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="locations.css" />
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <span class="logo-number">7</span>
+                        <span class="logo-text">Sports</span>
+                    </a>
+                    <nav class="desktop-nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="programs.html" class="nav-link">Programs</a>
+                        <a href="find-program.html" class="nav-link"
+                            >Find My Program</a
+                        >
+                        <a href="locations.html" class="nav-link active"
+                            >Locations</a
+                        >
+                        <a href="news.html" class="nav-link">News</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </nav>
+                    <div class="language-toggle">
+                        <button class="lang-btn active">EN</button>
+                        <span class="lang-divider">|</span>
+                        <button class="lang-btn">FR</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
+                <h1>We're Everywhere You Are</h1>
+                <p>Find 7Sports programs across Quebec</p>
+            </div>
+        </section>
+
+        <!-- Highlight Quote Block -->
+        <section class="quote-section">
+            <div class="container">
+                <div class="quote-content">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="quote-icon"
+                    >
+                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z" />
+                    </svg>
+                    <blockquote>
+                        <p>
+                            "No matter where you are — there's a 7Sports near
+                            you."
+                        </p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Overview -->
+        <section class="map-overview-section">
+            <div class="container">
+                <h2 class="section-title">Our Coverage</h2>
+                <p class="section-subtitle">
+                    Serving communities across the greater Montreal area and
+                    beyond
+                </p>
+                <div class="map-container">
+                    <div id="locationsMap"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- City Cards Grid -->
+        <section class="cities-section">
+            <div class="container">
+                <h2 class="section-title">Explore by City</h2>
+                <p class="section-subtitle">
+                    Click on a city to see available programs
+                </p>
+
+                <div class="cities-grid">
+                    <!-- Montreal -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(214, 40, 40, 0.9),
+                                        rgba(247, 127, 0, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23D62828%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>Montreal</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 4 locations</span>
+                                <span class="stat-item"
+                                    >🏒 3 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                Downtown, Plateau, Ville-Marie, and surrounding
+                                neighborhoods
+                            </p>
+                            <a
+                                href="find-program.html?city=montreal"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Laval -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(43, 89, 195, 0.9),
+                                        rgba(0, 119, 182, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%232B59C3%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>Laval</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 3 locations</span>
+                                <span class="stat-item"
+                                    >🏒 3 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                Multiple facilities across Laval's vibrant
+                                communities
+                            </p>
+                            <a
+                                href="find-program.html?city=laval"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Longueuil -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(246, 196, 67, 0.9),
+                                        rgba(238, 155, 0, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23F6C443%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>Longueuil</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 2 locations</span>
+                                <span class="stat-item"
+                                    >🏒 2 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                South Shore's premier youth sports programs
+                            </p>
+                            <a
+                                href="find-program.html?city=longueuil"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- West Island -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(42, 157, 143, 0.9),
+                                        rgba(233, 196, 106, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%232A9D8F%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>West Island</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 5 locations</span>
+                                <span class="stat-item"
+                                    >🏒 3 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                Pointe-Claire, Dorval, Beaconsfield, and more
+                            </p>
+                            <a
+                                href="find-program.html?city=westisland"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- North Shore -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(244, 162, 97, 0.9),
+                                        rgba(231, 111, 81, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23F4A261%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>North Shore</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 3 locations</span>
+                                <span class="stat-item"
+                                    >🏒 2 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                Rosemère, Blainville, and surrounding areas
+                            </p>
+                            <a
+                                href="find-program.html?city=northshore"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Quebec City -->
+                    <div class="city-card">
+                        <div
+                            class="city-image"
+                            style="
+                                background: linear-gradient(
+                                        135deg,
+                                        rgba(124, 58, 237, 0.9),
+                                        rgba(167, 139, 250, 0.8)
+                                    ),
+                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%237C3AED%22 width=%22400%22 height=%22300%22/></svg>');
+                            "
+                        ></div>
+                        <div class="city-content">
+                            <h3>Quebec City</h3>
+                            <p class="city-stats">
+                                <span class="stat-item">⚽ 2 locations</span>
+                                <span class="stat-item"
+                                    >🏒 2 sports offered</span
+                                >
+                            </p>
+                            <p class="city-description">
+                                Expanding to serve Quebec's capital region
+                            </p>
+                            <a
+                                href="find-program.html?city=quebeccity"
+                                class="btn btn-primary"
+                                >See Programs →</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section class="coming-soon-section">
+            <div class="container">
+                <h2>Coming Soon to Your Area</h2>
+                <p class="section-subtitle">
+                    We're always expanding! Sign up to be notified when we
+                    launch in these cities:
+                </p>
+                <div class="coming-soon-list">
+                    <div class="coming-soon-item">
+                        <span class="coming-soon-icon">🚀</span>
+                        <h4>Gatineau</h4>
+                        <p>Fall 2025</p>
+                    </div>
+                    <div class="coming-soon-item">
+                        <span class="coming-soon-icon">🚀</span>
+                        <h4>Sherbrooke</h4>
+                        <p>Winter 2026</p>
+                    </div>
+                    <div class="coming-soon-item">
+                        <span class="coming-soon-icon">🚀</span>
+                        <h4>Trois-Rivières</h4>
+                        <p>Spring 2026</p>
+                    </div>
+                </div>
+                <form class="notify-form">
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="notify-input"
+                        required
+                    />
+                    <button type="submit" class="btn btn-primary">
+                        Notify Me
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CTA Footer -->
+        <section class="footer-cta">
+            <div class="container">
+                <h2>Ready to Get Started?</h2>
+                <a href="find-program.html" class="btn btn-primary-large"
+                    >Find Your Program →</a
+                >
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <span class="logo-number">7</span>
+                            <span class="logo-text">Sports</span>
+                        </div>
+                        <p>
+                            Building confidence, teamwork, and skills through
+                            sport.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Programs</h4>
+                        <a href="programs.html#soccer">Soccer</a>
+                        <a href="programs.html#hockey">Dek Hockey</a>
+                        <a href="programs.html#multisport">Multi-Sport</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="locations.html">Locations</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <a href="mailto:info@7sports.com">info@7sports.com</a>
+                        <a href="tel:+15551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 7Sports. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="find-program.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Find Program</span>
+            </a>
+            <a href="#contact" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                </svg>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <!-- Floating Action Button -->
+        <div class="fab">
+            <button class="fab-button" aria-label="Contact us">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                </svg>
+            </button>
+            <div class="fab-menu">
+                <a href="tel:+15551234567" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                    </svg>
+                    Call
+                </a>
+                <a href="mailto:info@7sports.com" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        ></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Motion Ball -->
+        <div class="motion-ball"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+        <script src="locations.js"></script>
+    </body>
+</html>

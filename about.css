@@ -1,0 +1,471 @@
+/* ================================
+   About Us Page Styles
+   ================================ */
+
+/* Fix for page hero overlap - already handled by programs.css page-hero class */
+
+/* Story Section */
+.story-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--deep-charcoal);
+}
+
+.lead {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-red);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.story-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-radius: 12px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-red);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.story-image {
+    position: relative;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.image-placeholder::after {
+    content: '👨‍👩‍👧‍👦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .image-placeholder {
+        height: 350px;
+    }
+    
+    .story-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Values Section */
+.values-section {
+    padding: 5rem 0;
+    background: var(--accent-gray);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.value-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--deep-charcoal);
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Founders Section */
+.founders-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.founders-grid {
+    display: grid;
+    gap: 4rem;
+}
+
+.founder-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.founder-card:nth-child(even) {
+    grid-template-columns: 2fr 1fr;
+}
+
+.founder-card:nth-child(even) .founder-image {
+    order: 2;
+}
+
+.founder-image .image-placeholder {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+}
+
+.founder-image .image-placeholder::after {
+    content: '👤';
+    font-size: 6rem;
+}
+
+.founder-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--deep-charcoal);
+}
+
+.founder-title {
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.founder-quote {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--deep-charcoal);
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-left: 4px solid var(--primary-red);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    line-height: 1.7;
+}
+
+.founder-bio {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+@media (max-width: 1024px) {
+    .founder-card,
+    .founder-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+    
+    .founder-card:nth-child(even) .founder-image {
+        order: 0;
+    }
+    
+    .founder-image .image-placeholder {
+        height: 300px;
+    }
+}
+
+/* Coaches Section */
+.coaches-section {
+    padding: 5rem 0;
+    background: var(--accent-gray);
+}
+
+.coaches-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.coaches-carousel {
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.coaches-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s ease;
+}
+
+.coach-card {
+    flex: 0 0 300px;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.coach-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.coach-image .image-placeholder {
+    width: 100%;
+    height: 250px;
+}
+
+.coach-image .image-placeholder::after {
+    content: '👨‍🏫';
+    font-size: 4rem;
+}
+
+.coach-info {
+    padding: 1.5rem;
+}
+
+.coach-info h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--deep-charcoal);
+}
+
+.coach-role {
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.coach-location {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.coach-fact {
+    font-style: italic;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Media Section */
+.media-section {
+    padding: 5rem 0;
+    background: white;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+.video-placeholder {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, #D62828 0%, #2B59C3 50%, #F6C443 100%);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.video-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+}
+
+.video-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.play-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.video-placeholder:hover .play-icon {
+    transform: scale(1.2);
+}
+
+.video-content p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--warm-white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-stars {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #666;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .video-placeholder {
+        height: 300px;
+    }
+    
+    .play-icon {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* Join Team Section */
+.join-team-section {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-red) 0%, #a02020 100%);
+    color: white;
+    text-align: center;
+}
+
+.join-team-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.join-team-content h2 {
+    margin-bottom: 1.5rem;
+}
+
+.join-team-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.join-team-section .btn-primary-large {
+    background: white;
+    color: var(--primary-red);
+}
+
+.join-team-section .btn-primary-large:hover {
+    background: var(--support-yellow);
+    color: var(--deep-charcoal);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .story-text h2 {
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .story-text p {
+        font-size: 1rem;
+    }
+    
+    .founder-content h3 {
+        font-size: 1.6rem;
+    }
+    
+    .founder-quote {
+        font-size: 1.05rem;
+        padding: 1rem;
+    }
+    
+    .coach-card {
+        flex: 0 0 280px;
+    }
+}
+

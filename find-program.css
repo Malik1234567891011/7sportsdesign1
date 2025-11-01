@@ -1,0 +1,419 @@
+/* ================================
+   Find My Program Page Styles
+   ================================ */
+
+.page-hero-small {
+    position: relative;
+    min-height: 50vh;
+    background: linear-gradient(135deg, #d62828 0%, #f77f00 50%, #f6c443 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.page-hero-small .container {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 1rem 2rem;
+}
+
+.page-hero-small h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.page-hero-small p {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.95;
+    color: #fff;
+}
+
+/* Filter Bar */
+.filter-bar {
+    background: white;
+    box-shadow: var(--shadow-md);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 70px;
+    z-index: 100;
+    border-bottom: 3px solid var(--accent-gray);
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--deep-charcoal);
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--accent-gray);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    min-height: 48px;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    min-height: 48px;
+}
+
+@media (max-width: 768px) {
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-bar {
+        top: 60px;
+    }
+}
+
+/* Map & Results Layout */
+.map-results-section {
+    padding: 2rem 0 4rem;
+}
+
+.map-results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 1024px) {
+    .map-results-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Map Wrapper */
+.map-wrapper {
+    position: relative;
+    height: 600px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+#programMap {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+}
+
+.map-legend {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    z-index: 500;
+}
+
+.map-legend h4 {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.legend-marker {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.legend-marker.soccer {
+    background: #d62828;
+}
+
+.legend-marker.hockey {
+    background: #2b59c3;
+}
+
+.legend-marker.multisport {
+    background: #f6c443;
+}
+
+@media (max-width: 1024px) {
+    .map-wrapper {
+        height: 400px;
+        order: 2;
+    }
+}
+
+/* Results Wrapper */
+.results-wrapper {
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.results-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.results-wrapper::-webkit-scrollbar-track {
+    background: var(--accent-gray);
+    border-radius: 4px;
+}
+
+.results-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-red);
+    border-radius: 4px;
+}
+
+.results-header {
+    margin-bottom: 1.5rem;
+}
+
+.results-header h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.results-count {
+    color: #666;
+    font-size: 1rem;
+}
+
+.results-count span {
+    color: var(--primary-red);
+    font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+    .results-wrapper {
+        max-height: none;
+        order: 1;
+    }
+}
+
+/* Result Cards */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.result-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.result-image {
+    height: 120px;
+    position: relative;
+}
+
+.result-image::after {
+    content: "📍";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+}
+
+.result-content {
+    padding: 1.5rem;
+}
+
+.result-badge {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: white;
+}
+
+.result-badge.soccer {
+    background: linear-gradient(135deg, #d62828, #f77f00);
+}
+
+.result-badge.hockey {
+    background: linear-gradient(135deg, #2b59c3, #0077b6);
+}
+
+.result-badge.multisport {
+    background: linear-gradient(135deg, #f6c443, #ee9b00);
+}
+
+.result-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--deep-charcoal);
+}
+
+.result-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.result-description {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.result-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--accent-gray);
+}
+
+.result-price {
+    font-weight: 700;
+    color: var(--primary-red);
+    font-size: 1.1rem;
+}
+
+/* View All Section */
+.view-all-section {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background: var(--warm-white);
+    border-radius: var(--border-radius);
+}
+
+.view-all-section p {
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Leaflet Custom Styles */
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    min-width: 250px;
+}
+
+.popup-card {
+    padding: 1rem;
+}
+
+.popup-card h4 {
+    margin-bottom: 0.5rem;
+    color: var(--deep-charcoal);
+}
+
+.popup-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+
+.popup-card .btn-small {
+    width: 100%;
+    text-align: center;
+}
+
+/* Loading State */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    color: #666;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--accent-gray);
+    border-top-color: var(--primary-red);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #666;
+}
+
+.empty-state h3 {
+    margin-bottom: 1rem;
+    color: var(--deep-charcoal);
+}
+
+.empty-state p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}

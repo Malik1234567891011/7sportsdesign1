@@ -1,0 +1,266 @@
+/* ================================
+   Locations Page Styles
+   ================================ */
+
+
+/* Quote Section */
+.quote-section {
+    padding: 4rem 0;
+    background: var(--warm-white);
+}
+
+.quote-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+}
+
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--deep-charcoal);
+    line-height: 1.4;
+}
+
+/* Map Overview */
+.map-overview-section {
+    padding: 4rem 0;
+    background: white;
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+#locationsMap {
+    width: 100%;
+    height: 100%;
+}
+
+/* Cities Grid */
+.cities-section {
+    padding: 5rem 0;
+    background: var(--accent-gray);
+}
+
+.cities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.city-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.city-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.city-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.city-image::after {
+    content: '📍';
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.city-content {
+    padding: 2rem;
+}
+
+.city-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--deep-charcoal);
+}
+
+.city-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-red);
+}
+
+.city-description {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Coming Soon Section */
+.coming-soon-section {
+    padding: 5rem 0;
+    background: white;
+    text-align: center;
+}
+
+.coming-soon-section h2 {
+    margin-bottom: 1rem;
+}
+
+.coming-soon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.coming-soon-item {
+    padding: 2rem;
+    background: var(--warm-white);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.coming-soon-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.coming-soon-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--deep-charcoal);
+}
+
+.coming-soon-item p {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+/* Notify Form */
+.notify-form {
+    max-width: 600px;
+    margin: 2rem auto 0;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.notify-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--accent-gray);
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.notify-input:focus {
+    outline: none;
+    border-color: var(--primary-red);
+}
+
+.notify-form .btn {
+    min-width: 150px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .map-container {
+        height: 350px;
+    }
+    
+    .cities-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .city-image {
+        height: 180px;
+    }
+    
+    .coming-soon-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .notify-form {
+        flex-direction: column;
+    }
+    
+    .notify-input {
+        min-width: 100%;
+    }
+    
+    .notify-form .btn {
+        width: 100%;
+    }
+}
+
+/* Leaflet Cluster Customization */
+.marker-cluster-small {
+    background-color: rgba(214, 40, 40, 0.6);
+}
+
+.marker-cluster-small div {
+    background-color: rgba(214, 40, 40, 0.8);
+    color: white;
+    font-weight: bold;
+}
+
+.marker-cluster-medium {
+    background-color: rgba(246, 196, 67, 0.6);
+}
+
+.marker-cluster-medium div {
+    background-color: rgba(246, 196, 67, 0.8);
+    color: white;
+    font-weight: bold;
+}
+
+.marker-cluster-large {
+    background-color: rgba(43, 89, 195, 0.6);
+}
+
+.marker-cluster-large div {
+    background-color: rgba(43, 89, 195, 0.8);
+    color: white;
+    font-weight: bold;
+}
+

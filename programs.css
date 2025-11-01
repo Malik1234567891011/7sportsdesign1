@@ -1,0 +1,310 @@
+/* ================================
+   Programs Page Specific Styles
+   ================================ */
+
+.page-hero {
+    position: relative;
+    min-height: 55vh;
+    background: linear-gradient(135deg, #d62828 0%, #f77f00 50%, #f6c443 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 1rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.page-hero-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 0;
+    opacity: 0.95;
+    color: #fff;
+}
+
+/* Tab Navigation */
+.programs-section {
+    padding: 4rem 0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: white;
+    border: 2px solid #ececec;
+    border-radius: 16px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    cursor: pointer;
+    transition: var(--transition);
+    min-height: 56px;
+}
+
+.tab-btn:hover {
+    border-color: var(--primary-red);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.tab-btn.active {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: white;
+}
+
+.tab-icon {
+    font-size: 1.5rem;
+}
+
+/* Tab Panels */
+.tab-panel {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.program-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.program-intro h2 {
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+}
+
+.program-intro p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Accordion Styles */
+.accordion-group {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.accordion-item.active .accordion-header {
+    background: var(--warm-white);
+}
+
+.accordion-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.accordion-title h3 {
+    font-size: 1.5rem;
+    color: var(--deep-charcoal);
+    margin: 0;
+}
+
+.age-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(
+        135deg,
+        var(--primary-red),
+        var(--support-yellow)
+    );
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.accordion-icon {
+    font-size: 2rem;
+    color: var(--primary-red);
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-inner {
+    padding: 0 2rem 2rem;
+}
+
+/* Program Details */
+.program-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--warm-white);
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.detail-item strong {
+    color: var(--primary-red);
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* Program Gallery */
+.program-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.gallery-placeholder {
+    height: 150px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-placeholder::after {
+    content: "📷";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    opacity: 0.5;
+}
+
+.program-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-hero {
+        height: 300px;
+    }
+
+    .tab-btn {
+        flex: 1 1 auto;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .accordion-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .accordion-title h3 {
+        font-size: 1.2rem;
+    }
+
+    .accordion-inner {
+        padding: 0 1.5rem 1.5rem;
+    }
+
+    .program-details {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .age-badge {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}

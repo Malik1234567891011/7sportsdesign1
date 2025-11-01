@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>News & Highlights - 7Sports</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="news.css" />
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <span class="logo-number">7</span>
+                        <span class="logo-text">Sports</span>
+                    </a>
+                    <nav class="desktop-nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="programs.html" class="nav-link">Programs</a>
+                        <a href="find-program.html" class="nav-link"
+                            >Find My Program</a
+                        >
+                        <a href="locations.html" class="nav-link">Locations</a>
+                        <a href="news.html" class="nav-link active">News</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </nav>
+                    <div class="language-toggle">
+                        <button class="lang-btn active">EN</button>
+                        <span class="lang-divider">|</span>
+                        <button class="lang-btn">FR</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Hero -->
+        <section class="news-hero">
+            <div class="news-hero-overlay"></div>
+            <div class="news-hero-content">
+                <h1>7Sports News & Highlights</h1>
+                <p>Stay updated with the latest from our community</p>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="news-filters">
+            <div class="container">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">
+                        All
+                    </button>
+                    <button class="filter-tab" data-filter="announcements">
+                        Announcements
+                    </button>
+                    <button class="filter-tab" data-filter="camps">
+                        Camps
+                    </button>
+                    <button class="filter-tab" data-filter="events">
+                        Events
+                    </button>
+                    <button class="filter-tab" data-filter="community">
+                        Community
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section class="news-grid-section">
+            <div class="container">
+                <div class="news-grid" id="newsGrid">
+                    <!-- Article 1 -->
+                    <article class="news-grid-item" data-category="events">
+                        <a href="#article-1" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #d62828 0%,
+                                            #f77f00 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category">Event</span>
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 21, 2025</span>
+                                <h3>Spring Soccer Tournament Recap</h3>
+                                <p class="news-grid-summary">
+                                    Amazing turnout at our annual tournament
+                                    with over 200 kids participating and
+                                    celebrating teamwork! The event featured
+                                    exciting matches, skill demonstrations, and
+                                    lots of fun activities for families.
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="news-grid-item" data-category="camps">
+                        <a href="#article-2" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #2b59c3 0%,
+                                            #0077b6 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category">Camp</span>
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 18, 2025</span>
+                                <h3>Summer Camp Registration Opens</h3>
+                                <p class="news-grid-summary">
+                                    Early bird registration is now open for our
+                                    exciting summer programs across all
+                                    locations. Secure your spot and save 15%
+                                    when you register before December 1st!
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="news-grid-item" data-category="community">
+                        <a href="#article-3" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #f6c443 0%,
+                                            #ee9b00 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category"
+                                    >Community</span
+                                >
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 15, 2025</span>
+                                <h3>New Location Opening in Laval</h3>
+                                <p class="news-grid-summary">
+                                    We're thrilled to announce our newest
+                                    facility opening this fall with
+                                    state-of-the-art equipment. Join us for our
+                                    grand opening celebration on November 5th!
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article
+                        class="news-grid-item"
+                        data-category="announcements"
+                    >
+                        <a href="#article-4" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #2a9d8f 0%,
+                                            #e9c46a 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category"
+                                    >Announcement</span
+                                >
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 12, 2025</span>
+                                <h3>Coach of the Month: Emma Laurent</h3>
+                                <p class="news-grid-summary">
+                                    Celebrating our incredible lead soccer coach
+                                    for her dedication and positive impact on
+                                    young athletes. Emma has been inspiring kids
+                                    for over 5 years at 7Sports.
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Article 5 -->
+                    <article class="news-grid-item" data-category="events">
+                        <a href="#article-5" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #7c3aed 0%,
+                                            #a78bfa 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category">Event</span>
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 8, 2025</span>
+                                <h3>Holiday Multi-Sport Day</h3>
+                                <p class="news-grid-summary">
+                                    Join us for a special holiday celebration
+                                    featuring all our sports programs. Fun
+                                    games, prizes, and family activities await
+                                    on December 18th!
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Article 6 -->
+                    <article class="news-grid-item" data-category="community">
+                        <a href="#article-6" class="news-grid-link">
+                            <div class="news-grid-image">
+                                <div
+                                    class="news-grid-placeholder"
+                                    style="
+                                        background: linear-gradient(
+                                            135deg,
+                                            #dc2626 0%,
+                                            #f97316 100%
+                                        );
+                                    "
+                                ></div>
+                                <span class="news-grid-category"
+                                    >Community</span
+                                >
+                            </div>
+                            <div class="news-grid-content">
+                                <span class="news-grid-date">Oct 5, 2025</span>
+                                <h3>Parent Feedback Success Stories</h3>
+                                <p class="news-grid-summary">
+                                    Hear from parents about how 7Sports has
+                                    helped their children gain confidence, make
+                                    friends, and discover a love for sports.
+                                    Read their inspiring stories.
+                                </p>
+                                <span class="news-grid-readmore"
+                                    >Read More →</span
+                                >
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Article Detail Modal (hidden by default, shown when article link is clicked) -->
+        <div class="article-modal" id="articleModal">
+            <div class="article-modal-content">
+                <button class="article-modal-close" aria-label="Close">
+                    ×
+                </button>
+                <div class="article-modal-body" id="articleModalBody">
+                    <!-- Content will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <span class="logo-number">7</span>
+                            <span class="logo-text">Sports</span>
+                        </div>
+                        <p>
+                            Building confidence, teamwork, and skills through
+                            sport.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Programs</h4>
+                        <a href="programs.html#soccer">Soccer</a>
+                        <a href="programs.html#hockey">Dek Hockey</a>
+                        <a href="programs.html#multisport">Multi-Sport</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="locations.html">Locations</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <a href="mailto:info@7sports.com">info@7sports.com</a>
+                        <a href="tel:+15551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 7Sports. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="find-program.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Find Program</span>
+            </a>
+            <a href="news.html" class="mobile-nav-item active">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path
+                        d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                    ></path>
+                </svg>
+                <span>News</span>
+            </a>
+        </nav>
+
+        <!-- Floating Action Button -->
+        <div class="fab">
+            <button class="fab-button" aria-label="Contact us">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                </svg>
+            </button>
+            <div class="fab-menu">
+                <a href="tel:+15551234567" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                    </svg>
+                    Call
+                </a>
+                <a href="mailto:info@7sports.com" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        ></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Motion Ball -->
+        <div class="motion-ball"></div>
+
+        <script src="script.js"></script>
+        <script src="news.js"></script>
+    </body>
+</html>

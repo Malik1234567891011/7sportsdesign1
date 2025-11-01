@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Find My Program - 7Sports</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="find-program.css" />
+    </head>
+    <body>
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <a href="index.html" class="logo">
+                        <span class="logo-number">7</span>
+                        <span class="logo-text">Sports</span>
+                    </a>
+                    <nav class="desktop-nav">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <a href="programs.html" class="nav-link">Programs</a>
+                        <a href="find-program.html" class="nav-link active"
+                            >Find My Program</a
+                        >
+                        <a href="locations.html" class="nav-link">Locations</a>
+                        <a href="news.html" class="nav-link">News</a>
+                        <a href="about.html" class="nav-link">About Us</a>
+                        <a href="faq.html" class="nav-link">FAQ</a>
+                    </nav>
+                    <div class="language-toggle">
+                        <button class="lang-btn active">EN</button>
+                        <span class="lang-divider">|</span>
+                        <button class="lang-btn">FR</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Page Hero -->
+        <section class="page-hero-small">
+            <div class="container">
+                <h1>Find Your Perfect Program</h1>
+                <p>Use the filters below to discover programs near you</p>
+            </div>
+        </section>
+
+        <!-- Filter Bar (Sticky) -->
+        <div class="filter-bar" id="filterBar">
+            <div class="container">
+                <form class="filter-form" id="filterForm">
+                    <div class="filter-group">
+                        <label for="sportFilter">Sport</label>
+                        <select id="sportFilter" class="filter-select">
+                            <option value="">All Sports</option>
+                            <option value="soccer">Soccer</option>
+                            <option value="hockey">Dek Hockey</option>
+                            <option value="multisport">Multi-Sport</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="ageFilter">Age Group</label>
+                        <select id="ageFilter" class="filter-select">
+                            <option value="">All Ages</option>
+                            <option value="2-4">2-4 years</option>
+                            <option value="4-6">4-6 years</option>
+                            <option value="7-12">7-12 years</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="distanceFilter">Max Distance</label>
+                        <select id="distanceFilter" class="filter-select">
+                            <option value="10">Within 10 km</option>
+                            <option value="25">Within 25 km</option>
+                            <option value="50">Within 50 km</option>
+                            <option value="100">Within 100 km</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary filter-btn">
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            style="
+                                width: 20px;
+                                height: 20px;
+                                margin-right: 0.5rem;
+                            "
+                        >
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                        Search Programs
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Map and Results Section -->
+        <section class="map-results-section">
+            <div class="map-results-container">
+                <!-- Interactive Map -->
+                <div class="map-wrapper">
+                    <div id="programMap"></div>
+                    <div class="map-legend">
+                        <h4>Legend</h4>
+                        <div class="legend-item">
+                            <span class="legend-marker soccer"></span>
+                            <span>Soccer</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-marker hockey"></span>
+                            <span>Dek Hockey</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-marker multisport"></span>
+                            <span>Multi-Sport</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results List -->
+                <div class="results-wrapper">
+                    <div class="results-header">
+                        <h2>Available Programs</h2>
+                        <p class="results-count">
+                            <span id="resultsCount">12</span> programs found
+                        </p>
+                    </div>
+
+                    <div class="results-list" id="resultsList">
+                        <!-- Program Result Cards (dynamically populated) -->
+                        <div
+                            class="result-card"
+                            data-lat="45.5017"
+                            data-lng="-73.5673"
+                            data-sport="soccer"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #d62828 0%,
+                                        #f77f00 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge soccer">Soccer</div>
+                                <h3>Downtown Soccer Academy</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Montreal, QC • 2.5 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 4-12 • Indoor & Outdoor • Weekdays &
+                                    Weekends
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $120/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="result-card"
+                            data-lat="45.4642"
+                            data-lng="-73.7494"
+                            data-sport="hockey"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #2b59c3 0%,
+                                        #0077b6 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge hockey">
+                                    Dek Hockey
+                                </div>
+                                <h3>West Island Dek Center</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Pointe-Claire, QC • 15 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 4-12 • Indoor facility • Evening
+                                    programs
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $135/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="result-card"
+                            data-lat="45.5274"
+                            data-lng="-73.5986"
+                            data-sport="multisport"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #f6c443 0%,
+                                        #ee9b00 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge multisport">
+                                    Multi-Sport
+                                </div>
+                                <h3>Plateau Multi-Sport Hub</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Plateau Mont-Royal, QC • 3.8 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 2-6 • Indoor facility • Mornings &
+                                    Afternoons
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $110/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="result-card"
+                            data-lat="45.4215"
+                            data-lng="-73.4917"
+                            data-sport="soccer"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #d62828 0%,
+                                        #f77f00 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge soccer">Soccer</div>
+                                <h3>South Shore Soccer School</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Longueuil, QC • 12 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 2-12 • Outdoor fields • Weekend
+                                    programs
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $115/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="result-card"
+                            data-lat="45.5580"
+                            data-lng="-73.7124"
+                            data-sport="hockey"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #2b59c3 0%,
+                                        #0077b6 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge hockey">
+                                    Dek Hockey
+                                </div>
+                                <h3>Laval Hockey Academy</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Laval, QC • 18 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 7-12 • Indoor facility • After-school
+                                    programs
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $140/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="result-card"
+                            data-lat="45.4736"
+                            data-lng="-73.6074"
+                            data-sport="multisport"
+                        >
+                            <div
+                                class="result-image"
+                                style="
+                                    background: linear-gradient(
+                                        135deg,
+                                        #f6c443 0%,
+                                        #ee9b00 100%
+                                    );
+                                "
+                            ></div>
+                            <div class="result-content">
+                                <div class="result-badge multisport">
+                                    Multi-Sport
+                                </div>
+                                <h3>Verdun Family Sports</h3>
+                                <p class="result-location">
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        style="width: 16px; height: 16px"
+                                    >
+                                        <path
+                                            d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                                        ></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    Verdun, QC • 5.2 km away
+                                </p>
+                                <p class="result-description">
+                                    Ages 2-6 • Indoor & Outdoor • Flexible
+                                    schedules
+                                </p>
+                                <div class="result-footer">
+                                    <span class="result-price"
+                                        >From $105/month</span
+                                    >
+                                    <a
+                                        href="#"
+                                        class="btn btn-primary btn-small"
+                                        >Register →</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="view-all-section">
+                        <p>Looking for more options?</p>
+                        <a href="locations.html" class="btn btn-secondary"
+                            >View All Programs by City</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <div class="logo">
+                            <span class="logo-number">7</span>
+                            <span class="logo-text">Sports</span>
+                        </div>
+                        <p>
+                            Building confidence, teamwork, and skills through
+                            sport.
+                        </p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Programs</h4>
+                        <a href="programs.html#soccer">Soccer</a>
+                        <a href="programs.html#hockey">Dek Hockey</a>
+                        <a href="programs.html#multisport">Multi-Sport</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <a href="about.html">About Us</a>
+                        <a href="locations.html">Locations</a>
+                        <a href="faq.html">FAQ</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <a href="mailto:info@7sports.com">info@7sports.com</a>
+                        <a href="tel:+15551234567">(555) 123-4567</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 7Sports. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Mobile Bottom Navigation -->
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                    ></path>
+                </svg>
+                <span>Home</span>
+            </a>
+            <a href="find-program.html" class="mobile-nav-item active">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    ></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span>Find Program</span>
+            </a>
+            <a href="#contact" class="mobile-nav-item">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                </svg>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <!-- Floating Action Button -->
+        <div class="fab">
+            <button class="fab-button" aria-label="Contact us">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                    ></path>
+                </svg>
+            </button>
+            <div class="fab-menu">
+                <a href="tel:+15551234567" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path>
+                    </svg>
+                    Call
+                </a>
+                <a href="mailto:info@7sports.com" class="fab-menu-item">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+                        <path
+                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                        ></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Email
+                </a>
+            </div>
+        </div>
+
+        <!-- Motion Ball -->
+        <div class="motion-ball"></div>
+
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="script.js"></script>
+        <script src="map.js"></script>
+    </body>
+</html>
