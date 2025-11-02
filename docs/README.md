@@ -80,28 +80,67 @@ A vibrant, energetic, and family-friendly website for 7Sports youth athletics pr
     -   Card hover lifts
     -   Carousel smooth transitions
 
-## 📁 File Structure
+## 📁 Project Structure
+
+The project is organized by purpose, not file type, for clarity and maintainability.
 
 ```
 7sportsMockUp-1/
-├── index.html              # Landing page
-├── programs.html           # Programs/Sports page
-├── find-program.html       # Interactive program finder
-├── locations.html          # Locations overview
-├── about.html              # About Us page
-├── faq.html                # FAQ page
-├── styles.css              # Global styles
-├── programs.css            # Programs page styles
-├── find-program.css        # Find program page styles
-├── locations.css           # Locations page styles
-├── about.css               # About page styles
-├── faq.css                 # FAQ page styles
-├── script.js               # Main JavaScript
-├── map.js                  # Map functionality
-├── locations.js            # Locations map
-├── about.js                # About page carousel
-└── README.md               # This file
+├── index.html                 # Landing page (root entry point)
+├── .gitignore                 # Git ignore rules
+│
+├── pages/                     # All page HTML files
+│   ├── about.html            # About Us page
+│   ├── faq.html              # FAQ page
+│   ├── find-program.html     # Interactive program finder
+│   ├── locations.html        # Locations overview
+│   ├── news.html             # News & Highlights page
+│   └── programs.html         # Programs/Sports page
+│
+├── styles/                    # All CSS stylesheets
+│   ├── styles.css            # Global/base styles (variables, resets, components)
+│   ├── about.css             # About page specific styles
+│   ├── faq.css               # FAQ page specific styles
+│   ├── find-program.css      # Find program page styles
+│   ├── locations.css         # Locations page styles
+│   ├── news.css              # News page styles
+│   └── programs.css          # Programs page styles
+│
+├── scripts/                   # All JavaScript files
+│   ├── script.js             # Main global JavaScript (navigation, carousels, etc.)
+│   ├── about.js              # About page functionality
+│   ├── export-prototypes.js  # Screenshot/export utilities
+│   ├── locations.js          # Locations map functionality
+│   ├── map.js                # Map functionality for find-program
+│   └── news.js               # News page functionality
+│
+├── assets/                    # Static assets
+│   ├── images/               # Image files (placeholders for now)
+│   └── fonts/                # Custom font files (if any)
+│
+└── docs/                      # Documentation files
+    ├── README.md             # This file - main project documentation
+    ├── CHANGELOG.md          # Version history
+    ├── QUICKSTART.md         # Quick start guide
+    ├── FIXES-SUMMARY.md      # Bug fixes documentation
+    └── EXPORT-GUIDE.md       # Export/prototype guidelines
 ```
+
+### Folder Organization Philosophy
+
+-   **Root level:** Only entry point (`index.html`) and config files (`.gitignore`)
+-   **pages/:** All HTML pages grouped together for easy navigation
+-   **styles/:** All stylesheets in one place, global styles first
+-   **scripts/:** All JavaScript organized by functionality
+-   **assets/:** Images, fonts, and other static files separate from code
+-   **docs/:** All documentation in one dedicated folder
+
+This structure makes it easy to:
+
+-   Find files by purpose (where is the about page? → `pages/about.html`)
+-   Maintain and update (all styles in one place, all scripts in one place)
+-   Scale the project (add new pages/features without clutter)
+-   Onboard new developers (clear, logical organization)
 
 ## 🚀 Getting Started
 

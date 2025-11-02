@@ -331,20 +331,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ================================
-    // Header Scroll Effect (Shadow Only)
+    // Premium Header Scroll Effect
     // ================================
 
     const header = document.querySelector(".header");
+    const hero = document.querySelector(".hero");
 
     if (header) {
         window.addEventListener("scroll", () => {
             const currentScroll = window.scrollY;
+            const heroHeight = hero ? hero.offsetHeight : 0;
 
-            // Add stronger shadow when scrolled
-            if (currentScroll > 100) {
-                header.style.boxShadow = "0 4px 16px rgba(0, 0, 0, 0.1)";
+            // Transparent on hero, solid after scroll
+            if (currentScroll < heroHeight * 0.8) {
+                header.classList.add("transparent");
+                header.classList.remove("scrolled");
             } else {
-                header.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.1)";
+                header.classList.remove("transparent");
+                header.classList.add("scrolled");
+            }
+
+            // Enhanced shadow on scroll
+            if (currentScroll > 50) {
+                if (!header.classList.contains("scrolled")) {
+                    header.classList.add("scrolled");
+                }
+            } else {
+                header.classList.remove("scrolled");
             }
         });
     }
