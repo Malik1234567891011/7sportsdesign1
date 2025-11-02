@@ -150,12 +150,11 @@ h3 {
 
 .header.transparent .language-toggle .lang-btn,
 .header.transparent .language-toggle .lang-divider {
-    color: white;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: var(--deep-charcoal);
 }
 
 .header.transparent .language-toggle .lang-btn.active {
-    color: var(--support-yellow);
+    color: var(--primary-red);
 }
 
 .header-content {
@@ -178,8 +177,7 @@ h3 {
 
 .header.transparent .logo,
 .header.transparent .logo-text {
-    color: white;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    color: var(--deep-charcoal);
 }
 
 .logo-number {
@@ -213,6 +211,12 @@ h3 {
     gap: 2rem;
 }
 
+@media (min-width: 768px) {
+    .desktop-nav {
+        display: flex;
+    }
+}
+
 .nav-link {
     color: var(--deep-charcoal);
     text-decoration: none;
@@ -224,13 +228,12 @@ h3 {
 }
 
 .header.transparent .nav-link {
-    color: white;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    color: var(--deep-charcoal);
 }
 
 .header.transparent .nav-link:hover,
 .header.transparent .nav-link.active {
-    color: var(--support-yellow);
+    color: var(--primary-red);
 }
 
 .nav-link:hover,
@@ -309,6 +312,8 @@ h3 {
     );
     color: white;
     box-shadow: var(--shadow-red);
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary::before {
@@ -321,11 +326,14 @@ h3 {
     background: linear-gradient(135deg, var(--primary-red) 0%, #a91d1d 100%);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: inherit;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 12px 32px rgba(214, 40, 40, 0.35);
+    color: white;
 }
 
 .btn-primary:hover::before {
@@ -336,9 +344,11 @@ h3 {
     transform: translateY(-1px) scale(0.99);
 }
 
-.btn-primary > * {
+.btn-primary > *,
+.btn-primary {
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    color: white;
 }
 
 .btn-secondary {
@@ -460,12 +470,14 @@ h3 {
 
 .hero-title {
     margin-bottom: 1rem;
+    color: white;
     text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
     font-size: clamp(1.25rem, 2vw, 1.625rem); /* Increased */
     margin-bottom: var(--spacing-2xl); /* 64px - premium spacing */
+    color: white;
     text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
     line-height: 1.6;
 }
@@ -629,9 +641,24 @@ h3 {
 }
 
 .program-image {
-    height: 200px;
+    height: 240px;
     background-size: cover;
     background-position: center;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.program-card:hover .program-image img {
+    transform: scale(1.1);
 }
 
 .program-content {
@@ -762,6 +789,14 @@ h3 {
     overflow: hidden;
 }
 
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
 .news-image-placeholder {
     width: 100%;
     height: 100%;
@@ -770,6 +805,7 @@ h3 {
     transition: transform 0.3s ease;
 }
 
+.news-card:hover .news-image img,
 .news-card:hover .news-image-placeholder {
     transform: scale(1.1);
 }
@@ -968,6 +1004,7 @@ h3 {
 
 .about-teaser h2 {
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .about-teaser p {
@@ -975,6 +1012,7 @@ h3 {
     margin-bottom: var(--spacing-2xl); /* 64px */
     line-height: 1.8;
     opacity: 0.95;
+    color: white;
 }
 
 .about-teaser .btn-primary {
@@ -1217,34 +1255,6 @@ h3 {
     .fab {
         bottom: 40px;
         right: 40px;
-    }
-}
-
-/* ================================
-   Motion Ball (Bouncing Element)
-   ================================ */
-
-.motion-ball {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(
-        circle at 30% 30%,
-        var(--support-yellow),
-        var(--primary-red)
-    );
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.8;
-    transition: transform 0.3s ease-out;
-    animation: bounce 2s ease-in-out infinite;
-    display: none;
-}
-
-@media (min-width: 1024px) {
-    .motion-ball {
-        display: block;
     }
 }
 

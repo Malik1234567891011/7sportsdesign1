@@ -247,55 +247,6 @@ document.addEventListener("DOMContentLoaded", function () {
     initNewsCarousel();
 
     // ================================
-    // Motion Ball Follow Scroll
-    // ================================
-
-    const motionBall = document.querySelector(".motion-ball");
-
-    if (motionBall) {
-        let ballX = window.innerWidth - 100;
-        let ballY = 100;
-
-        motionBall.style.left = `${ballX}px`;
-        motionBall.style.top = `${ballY}px`;
-
-        let lastScrollY = window.scrollY;
-        let ticking = false;
-
-        const updateBallPosition = () => {
-            const scrollY = window.scrollY;
-            const windowHeight = window.innerHeight;
-            const documentHeight = document.documentElement.scrollHeight;
-
-            // Calculate ball position based on scroll
-            const scrollPercent = scrollY / (documentHeight - windowHeight);
-
-            // Move ball in a wavy pattern as user scrolls
-            ballY = 100 + scrollPercent * (documentHeight - 200);
-            ballX =
-                window.innerWidth - 100 - Math.sin(scrollPercent * 10) * 100;
-
-            // Keep ball within bounds
-            ballX = Math.max(60, Math.min(window.innerWidth - 60, ballX));
-            ballY = Math.max(100, Math.min(documentHeight - 100, ballY));
-
-            motionBall.style.left = `${ballX}px`;
-            motionBall.style.top = `${ballY}px`;
-
-            ticking = false;
-        };
-
-        window.addEventListener("scroll", () => {
-            lastScrollY = window.scrollY;
-
-            if (!ticking) {
-                window.requestAnimationFrame(updateBallPosition);
-                ticking = true;
-            }
-        });
-    }
-
-    // ================================
     // FAB Menu Toggle
     // ================================
 

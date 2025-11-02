@@ -192,6 +192,14 @@
     overflow: hidden;
 }
 
+.news-grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
 .news-grid-placeholder {
     width: 100%;
     height: 100%;
@@ -200,6 +208,7 @@
     transition: transform 0.3s ease;
 }
 
+.news-grid-item:hover .news-grid-image img,
 .news-grid-item:hover .news-grid-placeholder {
     transform: scale(1.1);
 }

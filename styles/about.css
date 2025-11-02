@@ -2,7 +2,60 @@
    About Us Page Styles
    ================================ */
 
-/* Fix for page hero overlap - already handled by programs.css page-hero class */
+/* Page Hero */
+.page-hero {
+    position: relative;
+    min-height: 55vh;
+    background: linear-gradient(135deg, #d62828 0%, #f77f00 50%, #f6c443 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 1rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.page-hero-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 0;
+    opacity: 0.95;
+    color: #fff;
+}
 
 /* Story Section */
 .story-section {
@@ -71,6 +124,14 @@
     position: relative;
 }
 
+.story-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+}
+
 .image-placeholder {
     width: 100%;
     height: 500px;
@@ -80,7 +141,7 @@
 }
 
 .image-placeholder::after {
-    content: '👨‍👩‍👧‍👦';
+    content: "👨‍👩‍👧‍👦";
     position: absolute;
     top: 50%;
     left: 50%;
@@ -94,11 +155,12 @@
         grid-template-columns: 1fr;
         gap: 2rem;
     }
-    
+
+    .story-image img,
     .image-placeholder {
         height: 350px;
     }
-    
+
     .story-stats {
         grid-template-columns: 1fr;
         gap: 1rem;
@@ -172,6 +234,14 @@
     order: 2;
 }
 
+.founder-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+}
+
 .founder-image .image-placeholder {
     width: 100%;
     height: 400px;
@@ -179,7 +249,7 @@
 }
 
 .founder-image .image-placeholder::after {
-    content: '👤';
+    content: "👤";
     font-size: 6rem;
 }
 
@@ -219,11 +289,12 @@
     .founder-card:nth-child(even) {
         grid-template-columns: 1fr;
     }
-    
+
     .founder-card:nth-child(even) .founder-image {
         order: 0;
     }
-    
+
+    .founder-image img,
     .founder-image .image-placeholder {
         height: 300px;
     }
@@ -272,7 +343,7 @@
 }
 
 .coach-image .image-placeholder::after {
-    content: '👨‍🏫';
+    content: "👨‍🏫";
     font-size: 4rem;
 }
 
@@ -319,7 +390,7 @@
 .video-placeholder {
     width: 100%;
     height: 500px;
-    background: linear-gradient(135deg, #D62828 0%, #2B59C3 50%, #F6C443 100%);
+    background: linear-gradient(135deg, #d62828 0%, #2b59c3 50%, #f6c443 100%);
     border-radius: var(--border-radius);
     display: flex;
     align-items: center;
@@ -400,7 +471,7 @@
     .video-placeholder {
         height: 300px;
     }
-    
+
     .play-icon {
         width: 60px;
         height: 60px;
@@ -443,29 +514,32 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+    .page-hero {
+        min-height: 300px;
+    }
+
     .story-text h2 {
         font-size: 2rem;
     }
-    
+
     .lead {
         font-size: 1.1rem;
     }
-    
+
     .story-text p {
         font-size: 1rem;
     }
-    
+
     .founder-content h3 {
         font-size: 1.6rem;
     }
-    
+
     .founder-quote {
         font-size: 1.05rem;
         padding: 1rem;
     }
-    
+
     .coach-card {
         flex: 0 0 280px;
     }
 }
-

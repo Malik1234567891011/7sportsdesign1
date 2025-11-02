@@ -2,7 +2,60 @@
    FAQ Page Styles
    ================================ */
 
-/* Fix for page hero overlap - already handled by find-program.css page-hero-small class */
+/* Page Hero */
+.page-hero {
+    position: relative;
+    min-height: 55vh;
+    background: linear-gradient(135deg, #d62828 0%, #f77f00 50%, #f6c443 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.35);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 1rem 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.page-hero-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 0;
+    opacity: 0.95;
+    color: #fff;
+}
 
 /* Search Section */
 .faq-search-section {
@@ -241,37 +294,41 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .page-hero {
+        min-height: 300px;
+    }
+
     .faq-search-input {
         font-size: 1rem;
         padding: 1rem 1rem 1rem 3.5rem;
     }
-    
+
     .search-icon {
         width: 20px;
         height: 20px;
         left: 1rem;
     }
-    
+
     .category-title {
         font-size: 1.4rem;
     }
-    
+
     .faq-content-section .accordion-header {
         padding: 1rem 1.25rem;
     }
-    
+
     .faq-content-section .accordion-header span:first-child {
         font-size: 1rem;
     }
-    
+
     .faq-content-section .accordion-inner {
         padding: 0 1.25rem 1.25rem;
     }
-    
+
     .contact-options {
         flex-direction: column;
     }
-    
+
     .contact-options .btn {
         width: 100%;
     }
@@ -292,4 +349,3 @@
         transform: translateY(0);
     }
 }
-
