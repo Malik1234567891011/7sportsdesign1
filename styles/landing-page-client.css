@@ -1,0 +1,346 @@
+/* ================================
+   CLIENT-SPECIFIC LANDING PAGE STYLES
+   Overrides for more compact, playful, kid-friendly design
+   ================================ */
+
+/* Hero Section - Centered, Bold, Direct */
+.hero-title-main {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-age-range {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-buttons-centered {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-hero-solid {
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 140px;
+    text-align: center;
+}
+
+.btn-hero-red {
+    background: var(--primary-red);
+    color: white;
+}
+
+.btn-hero-white {
+    background: white;
+    color: var(--primary-red);
+}
+
+.btn-hero-solid:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Floating Balls - Playful and Kid-Friendly */
+.floating-ball {
+    position: absolute;
+    font-size: 8rem;
+    opacity: 0.6;
+    animation: gentleFloat 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.ball-1 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.ball-2 {
+    top: 60%;
+    right: 8%;
+    animation-delay: 2s;
+}
+
+.ball-3 {
+    bottom: 20%;
+    left: 10%;
+    animation-delay: 4s;
+    font-size: 6rem;
+}
+
+/* Icons Section - ORANGE rings, bigger, more playful */
+.giant-highlight-icon {
+    width: 120px !important;
+    height: 120px !important;
+    background: linear-gradient(135deg, #ff9500 0%, #ff6b00 100%) !important;
+    border: 6px solid white !important;
+    box-shadow: 0 10px 30px rgba(255, 149, 0, 0.4) !important;
+}
+
+.highlight-card:hover .giant-highlight-icon {
+    transform: scale(1.15) rotate(5deg) !important;
+}
+
+.giant-highlight-icon svg {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+/* Programs Section - Compact, Floating Balls */
+.program-preview {
+    position: relative;
+    overflow: visible;
+}
+
+.programs-floating-balls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-ball-program {
+    position: absolute;
+    font-size: 5rem;
+    opacity: 0.4;
+    animation: gentleFloat 10s ease-in-out infinite;
+}
+
+.ball-p1 {
+    top: 10%;
+    right: 5%;
+    animation-delay: 0s;
+}
+
+.ball-p2 {
+    bottom: 15%;
+    left: 8%;
+    animation-delay: 3s;
+}
+
+/* Testimonials - Full Image Background, Dark */
+.testimonials-section {
+    position: relative;
+    background: rgba(0, 0, 0, 0.85) !important;
+    padding: 4rem 0 !important;
+}
+
+.testimonials-full-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.testimonials-full-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.testimonials-title {
+    color: white !important;
+}
+
+.testimonial-card {
+    background: white !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.testimonials-balls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-ball-small {
+    position: absolute;
+    font-size: 4rem;
+    opacity: 0.5;
+    animation: gentleFloat 8s ease-in-out infinite;
+}
+
+.ball-t1 {
+    top: 20%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.ball-t2 {
+    bottom: 25%;
+    right: 8%;
+    animation-delay: 3s;
+}
+
+/* About Teaser - STRONGER Gradient */
+.about-teaser {
+    background: linear-gradient(135deg, #ff3b3b 0%, #ff8c00 50%, #ffd700 100%) !important;
+    padding: 4rem 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.about-teaser::after {
+    display: none !important;
+}
+
+.about-teaser h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
+}
+
+.about-teaser p {
+    display: none;
+}
+
+.btn-about-cta {
+    background: white;
+    color: var(--primary-red);
+    padding: 16px 48px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn-about-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer CTA - FULL YELLOW, HIGH CONTRAST */
+.footer-cta {
+    background: #ffd700 !important;
+    padding: 4rem 0 !important;
+    margin-top: 0 !important;
+}
+
+.footer-cta::after {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(17, 17, 17, 0.2) 70%,
+        var(--deep-charcoal) 100%
+    ) !important;
+}
+
+.footer-cta h2 {
+    color: #000 !important;
+    font-weight: 800 !important;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+}
+
+.btn-cta-large {
+    background: var(--primary-red);
+    color: white;
+    padding: 20px 60px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.btn-cta-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(214, 40, 40, 0.4);
+}
+
+/* Reduce Spacing - More Compact */
+.highlights,
+.program-preview,
+.testimonials-section,
+.about-teaser {
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    padding: 3rem 0 !important;
+}
+
+.hero {
+    margin-bottom: 2rem !important;
+}
+
+.section-title {
+    margin-bottom: 2rem !important;
+}
+
+.section-subtitle {
+    margin-bottom: 2rem !important;
+}
+
+/* Remove Section Separators */
+.section-separator {
+    display: none;
+}
+
+/* Programs Section - Add Floating Balls */
+.program-preview::before,
+.program-preview::after {
+    content: "⚽";
+    position: absolute;
+    font-size: 6rem;
+    opacity: 0.3;
+    pointer-events: none;
+    animation: gentleFloat 10s ease-in-out infinite;
+}
+
+.program-preview::before {
+    top: 10%;
+    right: 5%;
+}
+
+.program-preview::after {
+    bottom: 15%;
+    left: 5%;
+    animation-delay: 3s;
+}
+
+@media (max-width: 768px) {
+    .floating-ball {
+        font-size: 5rem;
+    }
+    
+    .btn-hero-solid {
+        min-width: 120px;
+        padding: 14px 30px;
+    }
+    
+    .highlights,
+    .program-preview,
+    .testimonials-section,
+    .about-teaser {
+        padding: 2rem 0 !important;
+    }
+}
+

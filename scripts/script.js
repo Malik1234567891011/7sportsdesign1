@@ -341,8 +341,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // ================================
 
     const initAccordions = () => {
+        // Program accordions
         const accordionHeaders = document.querySelectorAll(".accordion-header");
+        // Service accordions
+        const serviceAccordionHeaders = document.querySelectorAll(".service-accordion-header");
 
+        // Handle program accordions
         accordionHeaders.forEach((header) => {
             header.addEventListener("click", () => {
                 const item = header.parentElement;
@@ -367,6 +371,24 @@ document.addEventListener("DOMContentLoaded", function () {
                             }
                         });
                 }
+
+                // Toggle current accordion
+                item.classList.toggle("active");
+
+                if (!isActive) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+
+        // Handle service accordions (can have multiple open)
+        serviceAccordionHeaders.forEach((header) => {
+            header.addEventListener("click", () => {
+                const item = header.parentElement;
+                const content = item.querySelector(".service-accordion-content");
+                const isActive = item.classList.contains("active");
 
                 // Toggle current accordion
                 item.classList.toggle("active");

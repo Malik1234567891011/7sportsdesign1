@@ -218,6 +218,11 @@
 }
 
 /* Contact Suggestion */
+.suggestion-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
 .contact-suggestion {
     padding: 5rem 0;
     background: linear-gradient(135deg, var(--primary-red) 0%, #a02020 100%);
@@ -264,13 +269,20 @@
 }
 
 .contact-options .btn-secondary {
+    background: white;
     border-color: white;
-    color: white;
+    color: var(--deep-charcoal);
 }
 
 .contact-options .btn-secondary:hover {
     background: white;
-    color: var(--primary-red);
+    color: var(--deep-charcoal);
+    border-color: var(--support-yellow);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-options .btn-secondary svg {
+    color: var(--deep-charcoal);
 }
 
 /* No Results Message */
@@ -329,9 +341,42 @@
         flex-direction: column;
     }
 
-    .contact-options .btn {
-        width: 100%;
-    }
+.contact-options .btn {
+    width: 100%;
+}
+
+.cta-alternative {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+}
+
+.cta-alternative p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.cta-alternative a {
+    color: var(--primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.cta-alternative a:hover {
+    text-decoration: underline;
+}
+
+.contact-suggestion .cta-alternative p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-suggestion .cta-alternative a {
+    color: white;
+    text-decoration: underline;
+}
+
+.contact-suggestion .cta-alternative a:hover {
+    color: var(--support-yellow);
 }
 
 /* Smooth show/hide animation for filtered items */

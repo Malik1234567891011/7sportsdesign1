@@ -55,6 +55,27 @@
             </div>
         </section>
 
+        <!-- Page Purpose Clarification -->
+        <section class="page-clarification">
+            <div class="container">
+                <div class="clarification-box">
+                    <div class="clarification-icon">📍</div>
+                    <div class="clarification-content">
+                        <h3>Browse by Location</h3>
+                        <p>
+                            This page shows all our locations organized by
+                            region. Click on a city to see available programs
+                            there, or use our interactive program finder to
+                            search by sport, age, and season.
+                        </p>
+                        <a href="find-program.html" class="btn btn-primary"
+                            >Search All Programs →</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Highlight Quote Block -->
         <section class="quote-section">
             <div class="container">
@@ -90,206 +111,223 @@
             </div>
         </section>
 
-        <!-- City Cards Grid -->
+        <!-- Regional List Section -->
         <section class="cities-section">
             <div class="container">
-                <h2 class="section-title">Explore by City</h2>
+                <h2 class="section-title">Explore by Region</h2>
                 <p class="section-subtitle">
-                    Click on a city to see available programs
+                    Select a region to see all available locations and programs
                 </p>
 
-                <div class="cities-grid">
-                    <!-- Montreal -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(214, 40, 40, 0.9),
-                                        rgba(247, 127, 0, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23D62828%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>Montreal</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 4 locations</span>
-                                <span class="stat-item"
-                                    >🏒 3 sports offered</span
-                                >
-                            </p>
-                            <p class="city-description">
+                <!-- Region Dropdown -->
+                <div class="region-selector">
+                    <label for="regionDropdown" class="region-label">
+                        Quick Navigation:
+                    </label>
+                    <select id="regionDropdown" class="region-dropdown">
+                        <option value="">Select a Region...</option>
+                        <option value="montreal">Montreal</option>
+                        <option value="laval">Laval</option>
+                        <option value="westisland">West Island</option>
+                        <option value="longueuil">Longueuil</option>
+                        <option value="northshore">North Shore</option>
+                        <option value="quebeccity">Quebec City</option>
+                    </select>
+                </div>
+
+                <!-- Regional Lists -->
+                <div class="regions-list">
+                    <!-- Montreal Region -->
+                    <div class="region-item" data-region="montreal">
+                        <button class="region-header">
+                            <span class="region-name">📍 Montreal</span>
+                            <span class="region-stats">4 locations • 3 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
                                 Downtown, Plateau, Ville-Marie, and surrounding
                                 neighborhoods
                             </p>
-                            <a
-                                href="find-program.html?city=montreal"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Downtown Montreal</span>
+                                    <span class="location-programs">⚽ 🏒 🎯</span>
+                                    <a href="find-program.html?city=Montreal" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Plateau Mont-Royal</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Plateau Mont-Royal" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Ville-Marie</span>
+                                    <span class="location-programs">⚽ 🏒</span>
+                                    <a href="find-program.html?city=Montreal" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Verdun</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Verdun" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Laval -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(43, 89, 195, 0.9),
-                                        rgba(0, 119, 182, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%232B59C3%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>Laval</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 3 locations</span>
-                                <span class="stat-item"
-                                    >🏒 3 sports offered</span
-                                >
-                            </p>
-                            <p class="city-description">
+                    <!-- Laval Region -->
+                    <div class="region-item" data-region="laval">
+                        <button class="region-header">
+                            <span class="region-name">📍 Laval</span>
+                            <span class="region-stats">3 locations • 3 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
                                 Multiple facilities across Laval's vibrant
                                 communities
                             </p>
-                            <a
-                                href="find-program.html?city=laval"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Laval Central</span>
+                                    <span class="location-programs">⚽ 🏒 🎯</span>
+                                    <a href="find-program.html?city=Laval" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Laval North</span>
+                                    <span class="location-programs">⚽ 🏒</span>
+                                    <a href="find-program.html?city=Laval" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Laval South</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Laval" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Longueuil -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(246, 196, 67, 0.9),
-                                        rgba(238, 155, 0, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23F6C443%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>Longueuil</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 2 locations</span>
-                                <span class="stat-item"
-                                    >🏒 2 sports offered</span
-                                >
-                            </p>
-                            <p class="city-description">
-                                South Shore's premier youth sports programs
-                            </p>
-                            <a
-                                href="find-program.html?city=longueuil"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
-                        </div>
-                    </div>
-
-                    <!-- West Island -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(42, 157, 143, 0.9),
-                                        rgba(233, 196, 106, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%232A9D8F%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>West Island</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 5 locations</span>
-                                <span class="stat-item"
-                                    >🏒 3 sports offered</span
-                                >
-                            </p>
-                            <p class="city-description">
+                    <!-- West Island Region -->
+                    <div class="region-item" data-region="westisland">
+                        <button class="region-header">
+                            <span class="region-name">📍 West Island</span>
+                            <span class="region-stats">5 locations • 3 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
                                 Pointe-Claire, Dorval, Beaconsfield, and more
                             </p>
-                            <a
-                                href="find-program.html?city=westisland"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Pointe-Claire</span>
+                                    <span class="location-programs">⚽ 🏒 🎯</span>
+                                    <a href="find-program.html?city=Pointe-Claire" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Dorval</span>
+                                    <span class="location-programs">⚽ 🏒</span>
+                                    <a href="find-program.html?city=Dorval" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Beaconsfield</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Beaconsfield" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Pierrefonds</span>
+                                    <span class="location-programs">⚽ 🏒 🎯</span>
+                                    <span class="multi-program-badge">Multiple Programs</span>
+                                    <a href="find-program.html?city=Pointe-Claire" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Kirkland</span>
+                                    <span class="location-programs">⚽</span>
+                                    <a href="find-program.html?city=Pointe-Claire" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- North Shore -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(244, 162, 97, 0.9),
-                                        rgba(231, 111, 81, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23F4A261%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>North Shore</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 3 locations</span>
-                                <span class="stat-item"
-                                    >🏒 2 sports offered</span
-                                >
+                    <!-- Longueuil Region -->
+                    <div class="region-item" data-region="longueuil">
+                        <button class="region-header">
+                            <span class="region-name">📍 Longueuil</span>
+                            <span class="region-stats">2 locations • 2 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
+                                South Shore's premier youth sports programs
                             </p>
-                            <p class="city-description">
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Longueuil Central</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Longueuil" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Longueuil East</span>
+                                    <span class="location-programs">⚽</span>
+                                    <a href="find-program.html?city=Longueuil" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- North Shore Region -->
+                    <div class="region-item" data-region="northshore">
+                        <button class="region-header">
+                            <span class="region-name">📍 North Shore</span>
+                            <span class="region-stats">3 locations • 2 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
                                 Rosemère, Blainville, and surrounding areas
                             </p>
-                            <a
-                                href="find-program.html?city=northshore"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Rosemère</span>
+                                    <span class="location-programs">⚽ 🏒</span>
+                                    <a href="find-program.html?city=Rosemère" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Blainville</span>
+                                    <span class="location-programs">⚽</span>
+                                    <a href="find-program.html?city=Blainville" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Boisbriand</span>
+                                    <span class="location-programs">⚽ 🏒</span>
+                                    <a href="find-program.html?city=Rosemère" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
-                    <!-- Quebec City -->
-                    <div class="city-card">
-                        <div
-                            class="city-image"
-                            style="
-                                background: linear-gradient(
-                                        135deg,
-                                        rgba(124, 58, 237, 0.9),
-                                        rgba(167, 139, 250, 0.8)
-                                    ),
-                                    url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%237C3AED%22 width=%22400%22 height=%22300%22/></svg>');
-                            "
-                        ></div>
-                        <div class="city-content">
-                            <h3>Quebec City</h3>
-                            <p class="city-stats">
-                                <span class="stat-item">⚽ 2 locations</span>
-                                <span class="stat-item"
-                                    >🏒 2 sports offered</span
-                                >
-                            </p>
-                            <p class="city-description">
+                    <!-- Quebec City Region -->
+                    <div class="region-item" data-region="quebeccity">
+                        <button class="region-header">
+                            <span class="region-name">📍 Quebec City</span>
+                            <span class="region-stats">2 locations • 2 sports</span>
+                            <span class="region-arrow">▼</span>
+                        </button>
+                        <div class="region-content">
+                            <p class="region-description">
                                 Expanding to serve Quebec's capital region
                             </p>
-                            <a
-                                href="find-program.html?city=quebeccity"
-                                class="btn btn-primary"
-                                >See Programs →</a
-                            >
+                            <ul class="location-list">
+                                <li>
+                                    <span class="location-name">Quebec City Centre</span>
+                                    <span class="location-programs">⚽ 🎯</span>
+                                    <a href="find-program.html?city=Quebec City" class="location-link">View Programs →</a>
+                                </li>
+                                <li>
+                                    <span class="location-name">Sainte-Foy</span>
+                                    <span class="location-programs">⚽</span>
+                                    <a href="find-program.html?city=Quebec City" class="location-link">View Programs →</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>

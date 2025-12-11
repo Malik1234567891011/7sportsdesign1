@@ -186,28 +186,74 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Smooth scroll to map when city card is clicked
-    const cityCards = document.querySelectorAll(".city-card");
-    cityCards.forEach((card) => {
-        card.addEventListener("click", function (e) {
-            // Don't trigger if clicking the button
-            if (e.target.classList.contains("btn")) return;
+    // ================================
+    // Region Dropdown Functionality
+    // ================================
+    const regionDropdown = document.getElementById("regionDropdown");
+    const regionItems = document.querySelectorAll(".region-item");
 
-            const cityName = this.querySelector("h3").textContent;
-            const city = cities.find((c) => c.name === cityName);
+    if (regionDropdown) {
+        regionDropdown.addEventListener("change", function () {
+            const selectedRegion = this.value;
 
-            if (city) {
-                // Scroll to map
-                locationsMapElement.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                });
+            // Close all regions
+            regionItems.forEach((item) => {
+                item.classList.remove("active");
+            });
 
-                // After scroll, zoom to city and open popup
-                setTimeout(() => {
-                    locationsMap.setView([city.lat, city.lng], 13);
-                }, 500);
+            // Open selected region
+            if (selectedRegion) {
+                const targetRegion = document.querySelector(
+                    `[data-region="${selectedRegion}"]`
+                );
+                if (targetRegion) {
+                    targetRegion.classList.add("active");
+                    targetRegion.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center",
+                    });
+                }
             }
+        });
+    }
+
+    // ================================
+    // Region Accordion Functionality
+    // ================================
+    const regionHeaders = document.querySelectorAll(".region-header");
+
+    regionHeaders.forEach((header) => {
+        header.addEventListener("click", function () {
+            const regionItem = this.parentElement;
+            const isActive = regionItem.classList.contains("active");
+
+            // Close all other regions (optional - remove if you want multiple open)
+            // regionItems.forEach((item) => {
+            //     if (item !== regionItem) {
+            //         item.classList.remove("active");
+            //     }
+            // });
+
+            // Toggle current region
+            regionItem.classList.toggle("active");
+
+            // Update dropdown to match
+            if (regionDropdown) {
+                if (isActive) {
+                    regionDropdown.value = "";
+                } else {
+                    const regionValue = regionItem.getAttribute("data-region");
+                    regionDropdown.value = regionValue;
+                }
+            }
+        });
+    });
+
+    // Smooth scroll to map when location is clicked
+    const locationLinks = document.querySelectorAll(".location-link");
+    locationLinks.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            // Let the link work normally, but we could add map interaction here if needed
         });
     });
 });

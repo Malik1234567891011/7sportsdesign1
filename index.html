@@ -11,16 +11,16 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="styles/styles.css" />
+        <link rel="stylesheet" href="styles/landing-page-client.css" />
     </head>
     <body>
         <!-- Header Navigation -->
         <header class="header">
             <div class="container">
                 <div class="header-content">
-                    <div class="logo">
-                        <span class="logo-number">7</span>
-                        <span class="logo-text">Sports</span>
-                    </div>
+                    <a href="index.html" class="logo">
+                        <img src="7sports_Noir_300x150.png" alt="7Sports" />
+                    </a>
                     <nav class="desktop-nav">
                         <a href="index.html" class="nav-link active">Home</a>
                         <a href="pages/programs.html" class="nav-link"
@@ -47,32 +47,29 @@
 
         <!-- Hero Section -->
         <section class="hero">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/hero-video.mp4" type="video/mp4" />
-            </video>
+            <!-- Hero Background Image -->
+            <div class="hero-background-image">
+                <img
+                    src="assets/images/hero-action.JPG"
+                    alt="Kids playing sports"
+                />
+            </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h1 class="hero-title slide-in-left">Play. Learn. Grow.</h1>
-                <p
-                    class="hero-subtitle slide-in-left"
-                    style="animation-delay: 0.2s"
-                >
-                    Where kids discover teamwork through sport
-                </p>
-                <div
-                    class="hero-buttons slide-in-left"
-                    style="animation-delay: 0.4s"
-                >
-                    <a href="pages/find-program.html" class="btn btn-primary"
-                        >Find a Program</a
-                    >
-                    <a href="pages/programs.html" class="btn btn-secondary"
-                        >Explore Our Sports</a
-                    >
+                <h1 class="hero-title-main">Soccer. Multisport. Hockey.</h1>
+                <p class="hero-age-range">2 - 12 ans</p>
+                <div class="hero-buttons-centered">
+                    <a href="pages/programs.html#soccer" class="btn btn-hero-solid btn-hero-red">Soccer</a>
+                    <a href="pages/programs.html#multisport" class="btn btn-hero-solid btn-hero-white">Multisport</a>
+                    <a href="pages/programs.html#hockey" class="btn btn-hero-solid btn-hero-red">Hockey</a>
                 </div>
             </div>
-            <!-- Fallback image when video isn't available -->
-            <div class="hero-fallback"></div>
+            <!-- Floating Sports Balls -->
+            <div class="hero-graphics">
+                <div class="floating-ball ball-1">⚽</div>
+                <div class="floating-ball ball-2">🏒</div>
+                <div class="floating-ball ball-3">⚽</div>
+            </div>
         </section>
 
         <!-- Quick Highlights Strip -->
@@ -80,7 +77,7 @@
             <div class="container">
                 <div class="highlights-grid">
                     <div class="highlight-card fade-in">
-                        <div class="highlight-icon">
+                        <div class="giant-highlight-icon">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="none"
@@ -95,14 +92,14 @@
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
                         </div>
-                        <h3>Inclusive Programs</h3>
-                        <p>Every child belongs on the field</p>
+                        <h3>Programmes inclusifs</h3>
+                        <p>Chaque enfant a sa place</p>
                     </div>
                     <div
                         class="highlight-card fade-in"
                         style="animation-delay: 0.2s"
                     >
-                        <div class="highlight-icon">
+                        <div class="giant-highlight-icon">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="none"
@@ -114,14 +111,14 @@
                                 <polyline points="2 12 12 17 22 12"></polyline>
                             </svg>
                         </div>
-                        <h3>Expert Coaches</h3>
-                        <p>Trained to inspire and develop skills</p>
+                        <h3>Entraîneurs experts</h3>
+                        <p>Formés pour inspirer</p>
                     </div>
                     <div
                         class="highlight-card fade-in"
                         style="animation-delay: 0.4s"
                     >
-                        <div class="highlight-icon">
+                        <div class="giant-highlight-icon">
                             <svg
                                 viewBox="0 0 24 24"
                                 fill="none"
@@ -133,20 +130,35 @@
                                 ></path>
                             </svg>
                         </div>
-                        <h3>Safe & Fun Environment</h3>
-                        <p>Building confidence through play</p>
+                        <h3>Environnement sûr</h3>
+                        <p>Confiance par le jeu</p>
                     </div>
                 </div>
             </div>
+            <!-- Overlapping Circle to Next Section -->
+            <div class="overlapping-circle overlap-2"></div>
         </section>
+
+        <!-- Section Separator: Equipment/Sports Gear -->
+        <div class="section-separator">
+            <img src="someEquipmentAndSoccerNet.JPG" alt="Sports equipment" />
+        </div>
 
         <!-- Program Preview Carousel -->
         <section class="program-preview">
+            <!-- Overlapping Circle from Previous Section -->
+            <div class="overlapping-circle overlap-3"></div>
+            <!-- Floating Balls for Playfulness -->
+            <div class="programs-floating-balls">
+                <div class="floating-ball-program ball-p1">⚽</div>
+                <div class="floating-ball-program ball-p2">🏒</div>
+            </div>
             <div class="container">
-                <h2 class="section-title">Our Programs</h2>
-                <p class="section-subtitle">
-                    Choose the perfect sport for your child
-                </p>
+                <div class="programs-header-wrapper">
+                    <!-- Color Blob Accent -->
+                    <div class="programs-color-blob"></div>
+                    <h2 class="section-title">Aperçu des programmes</h2>
+                </div>
 
                 <div class="carousel">
                     <button
@@ -248,152 +260,56 @@
                     </button>
                 </div>
             </div>
+            <!-- Overlapping Circle to Next Section -->
+            <div class="overlapping-circle overlap-4"></div>
         </section>
 
-        <!-- Weekly News Section -->
-        <section class="weekly-news">
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <!-- Full Image Background -->
+            <div class="testimonials-full-bg">
+                <img
+                    src="assets/images/parent-kid.JPG"
+                    alt="Parent and child"
+                />
+            </div>
+            <!-- Floating Balls -->
+            <div class="testimonials-balls">
+                <div class="floating-ball-small ball-t1">⚽</div>
+                <div class="floating-ball-small ball-t2">🏒</div>
+            </div>
             <div class="container">
-                <h2 class="section-title slide-in-up">This Week at 7Sports</h2>
-                <p class="section-subtitle">
-                    Latest updates, highlights, and stories from our community
-                </p>
-
-                <div class="news-carousel">
-                    <button
-                        class="carousel-btn carousel-prev-news"
-                        aria-label="Previous"
-                    >
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <polyline points="15 18 9 12 15 6"></polyline>
-                        </svg>
-                    </button>
-
-                    <div class="news-carousel-container">
-                        <div class="news-carousel-track">
-                            <article class="news-card">
-                                <div class="news-image">
-                                    <img
-                                        src="assets/images/news-tournament.jpg"
-                                        alt="Spring Soccer Tournament"
-                                    />
-                                    <span class="news-category">Event</span>
-                                </div>
-                                <div class="news-content">
-                                    <span class="news-date">Oct 21, 2025</span>
-                                    <h3>Spring Soccer Tournament Recap</h3>
-                                    <p class="news-excerpt">
-                                        Amazing turnout at our annual tournament
-                                        with over 200 kids participating and
-                                        celebrating teamwork!
-                                    </p>
-                                    <a
-                                        href="pages/news.html#article-1"
-                                        class="news-link"
-                                        >Read More →</a
-                                    >
-                                </div>
-                            </article>
-
-                            <article class="news-card">
-                                <div class="news-image">
-                                    <img
-                                        src="assets/images/news-camp.jpg"
-                                        alt="Summer Camp Registration"
-                                    />
-                                    <span class="news-category">Camp</span>
-                                </div>
-                                <div class="news-content">
-                                    <span class="news-date">Oct 18, 2025</span>
-                                    <h3>Summer Camp Registration Opens</h3>
-                                    <p class="news-excerpt">
-                                        Early bird registration is now open for
-                                        our exciting summer programs across all
-                                        locations.
-                                    </p>
-                                    <a
-                                        href="pages/news.html#article-2"
-                                        class="news-link"
-                                        >Read More →</a
-                                    >
-                                </div>
-                            </article>
-
-                            <article class="news-card">
-                                <div class="news-image">
-                                    <img
-                                        src="assets/images/field.jpg"
-                                        alt="New Location in Laval"
-                                    />
-                                    <span class="news-category">Community</span>
-                                </div>
-                                <div class="news-content">
-                                    <span class="news-date">Oct 15, 2025</span>
-                                    <h3>New Location Opening in Laval</h3>
-                                    <p class="news-excerpt">
-                                        We're thrilled to announce our newest
-                                        facility opening this fall with
-                                        state-of-the-art equipment.
-                                    </p>
-                                    <a
-                                        href="pages/news.html#article-3"
-                                        class="news-link"
-                                        >Read More →</a
-                                    >
-                                </div>
-                            </article>
-
-                            <article class="news-card">
-                                <div class="news-image">
-                                    <img
-                                        src="assets/images/girlcoach.png"
-                                        alt="Coach of the Month"
-                                    />
-                                    <span class="news-category"
-                                        >Announcement</span
-                                    >
-                                </div>
-                                <div class="news-content">
-                                    <span class="news-date">Oct 12, 2025</span>
-                                    <h3>Coach of the Month: Emma Laurent</h3>
-                                    <p class="news-excerpt">
-                                        Celebrating our incredible lead soccer
-                                        coach for her dedication and positive
-                                        impact on young athletes.
-                                    </p>
-                                    <a
-                                        href="pages/news.html#article-4"
-                                        class="news-link"
-                                        >Read More →</a
-                                    >
-                                </div>
-                            </article>
-                        </div>
+                <h2 class="section-title testimonials-title">What parents say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "My daughter was shy and hesitant about sports.
+                            After just a few weeks at 7Sports, she couldn't wait
+                            for practice day. The coaches are incredible!"
+                        </p>
+                        <p class="testimonial-author">— Jennifer P., Parent</p>
                     </div>
-
-                    <button
-                        class="carousel-btn carousel-next-news"
-                        aria-label="Next"
-                    >
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-                            <polyline points="9 18 15 12 9 6"></polyline>
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="news-cta">
-                    <a href="pages/news.html" class="btn btn-primary"
-                        >View All News & Highlights →</a
-                    >
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "Finally, a program that focuses on fun and
+                            skill-building instead of winning. My son has
+                            learned so much and made great friends."
+                        </p>
+                        <p class="testimonial-author">— David L., Parent</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">
+                            "As a working parent, I appreciate the flexibility
+                            and the caring environment. I know my kids are in
+                            good hands every time."
+                        </p>
+                        <p class="testimonial-author">
+                            — Marie-Claire D., Parent
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -403,14 +319,8 @@
             <div class="container">
                 <div class="about-teaser-content">
                     <h2>Building Champions Since 2018</h2>
-                    <p>
-                        For 7 years, 7Sports has been helping kids discover
-                        teamwork through play. We believe every child deserves
-                        the chance to experience the joy of sport in a
-                        supportive, non-competitive environment.
-                    </p>
-                    <a href="pages/about.html" class="btn btn-primary"
-                        >Learn More About Us</a
+                    <a href="pages/about.html" class="btn btn-about-cta"
+                        >En savoir plus</a
                     >
                 </div>
             </div>
@@ -420,8 +330,8 @@
         <section class="footer-cta">
             <div class="container">
                 <h2>Ready to Register?</h2>
-                <a href="pages/find-program.html" class="btn btn-primary-large"
-                    >Find Your Program →</a
+                <a href="pages/find-program.html" class="btn btn-cta-large"
+                    >S'inscrire</a
                 >
             </div>
         </section>
@@ -431,10 +341,9 @@
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-col">
-                        <div class="logo">
-                            <span class="logo-number">7</span>
-                            <span class="logo-text">Sports</span>
-                        </div>
+                        <a href="index.html" class="logo">
+                            <img src="7sports_Noir_300x150.png" alt="7Sports" />
+                        </a>
                         <p>
                             Building confidence, teamwork, and skills through
                             sport.

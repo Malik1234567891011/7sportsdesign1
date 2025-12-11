@@ -493,6 +493,7 @@
 
 .join-team-content h2 {
     margin-bottom: 1.5rem;
+    color: white;
 }
 
 .join-team-content p {
@@ -500,6 +501,7 @@
     line-height: 1.8;
     margin-bottom: 2rem;
     opacity: 0.95;
+    color: white;
 }
 
 .join-team-section .btn-primary-large {

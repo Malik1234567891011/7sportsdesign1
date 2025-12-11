@@ -107,74 +107,214 @@ blockquote p {
     height: 100%;
 }
 
-/* Cities Grid */
+/* Regional List Section */
 .cities-section {
     padding: 5rem 0;
     background: var(--accent-gray);
 }
 
-.cities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+/* Region Selector Dropdown */
+.region-selector {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    text-align: center;
 }
 
-.city-card {
+.region-label {
+    display: block;
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.region-dropdown {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 2px solid var(--accent-gray);
+    border-radius: var(--border-radius-sm);
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    background: white;
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23d62828' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 20px;
+    padding-right: 3.5rem;
+}
+
+.region-dropdown:hover {
+    border-color: var(--primary-red);
+}
+
+.region-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(214, 40, 40, 0.1);
+}
+
+/* Regions List */
+.regions-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.region-item {
     background: white;
     border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
     transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.city-card:hover {
-    transform: translateY(-8px);
+.region-item:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.region-item.active {
     box-shadow: var(--shadow-lg);
+    border-color: var(--primary-red);
 }
 
-.city-image {
-    height: 220px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-
-.city-image::after {
-    content: "📍";
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    font-size: 3rem;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
-}
-
-.city-content {
-    padding: 2rem;
-}
-
-.city-content h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: var(--deep-charcoal);
-}
-
-.city-stats {
+.region-header {
+    width: 100%;
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: var(--transition);
+    gap: 1rem;
     flex-wrap: wrap;
 }
 
-.stat-item {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-red);
+.region-header:hover {
+    background: var(--warm-white);
 }
 
-.city-description {
-    color: #666;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+.region-item.active .region-header {
+    background: var(--warm-white);
+    border-bottom: 2px solid var(--accent-gray);
+}
+
+.region-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--deep-charcoal);
+    flex: 1;
+    min-width: 200px;
+}
+
+.region-stats {
+    font-size: 1rem;
+    color: var(--primary-red);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.region-arrow {
+    font-size: 1.2rem;
+    color: var(--primary-red);
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.region-item.active .region-arrow {
+    transform: rotate(180deg);
+}
+
+.region-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.region-item.active .region-content {
+    max-height: 2000px;
+}
+
+.region-description {
+    padding: 1.5rem 2rem 1rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--accent-gray);
+}
+
+.location-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.location-list li {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid var(--accent-gray);
+    gap: 1rem;
+    flex-wrap: wrap;
+    transition: var(--transition);
+}
+
+.location-list li:last-child {
+    border-bottom: none;
+}
+
+.location-list li:hover {
+    background: var(--warm-white);
+}
+
+.location-name {
+    font-weight: 600;
+    color: var(--deep-charcoal);
+    flex: 1;
+    min-width: 200px;
+    font-size: 1.1rem;
+}
+
+.location-programs {
+    font-size: 1.3rem;
+    white-space: nowrap;
+    margin-right: auto;
+}
+
+.location-link {
+    color: var(--primary-red);
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: var(--transition);
+    font-size: 0.95rem;
+}
+
+.location-link:hover {
+    color: var(--primary-red-dark);
+    transform: translateX(4px);
+}
+
+.multi-program-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, var(--primary-red), var(--support-yellow));
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
 }
 
 /* Coming Soon Section */
@@ -265,12 +405,30 @@ blockquote p {
         height: 350px;
     }
 
-    .cities-grid {
-        grid-template-columns: 1fr;
+    .region-header {
+        padding: 1.25rem 1.5rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
     }
 
-    .city-image {
-        height: 180px;
+    .region-name {
+        min-width: 100%;
+    }
+
+    .location-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .location-name {
+        min-width: 100%;
+    }
+
+    .location-programs {
+        margin-right: 0;
     }
 
     .coming-soon-list {

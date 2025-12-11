@@ -55,6 +55,12 @@
         <!-- Filter Bar (Sticky) -->
         <div class="filter-bar" id="filterBar">
             <div class="container">
+                <div class="filter-help-text">
+                    <p>
+                        Use the filters below to find programs by sport, age,
+                        location, and season
+                    </p>
+                </div>
                 <form class="filter-form" id="filterForm">
                     <div class="filter-group">
                         <label for="sportFilter">Sport</label>
@@ -64,6 +70,9 @@
                             <option value="hockey">Dek Hockey</option>
                             <option value="multisport">Multi-Sport</option>
                         </select>
+                        <span class="filter-help"
+                            >Choose the sport your child wants to play</span
+                        >
                     </div>
 
                     <div class="filter-group">
@@ -74,16 +83,52 @@
                             <option value="4-6">4-6 years</option>
                             <option value="7-12">7-12 years</option>
                         </select>
+                        <span class="filter-help"
+                            >Select your child's age range</span
+                        >
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="cityFilter">City/Region</label>
+                        <select id="cityFilter" class="filter-select">
+                            <option value="">All Areas</option>
+                            <option value="Montreal">Montreal</option>
+                            <option value="Laval">Laval</option>
+                            <option value="Longueuil">Longueuil</option>
+                            <option value="Pointe-Claire">West Island</option>
+                            <option value="Verdun">Verdun</option>
+                            <option value="Plateau Mont-Royal">Plateau</option>
+                        </select>
+                        <span class="filter-help"
+                            >Filter by city or region</span
+                        >
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="seasonFilter">Season</label>
+                        <select id="seasonFilter" class="filter-select">
+                            <option value="">All Seasons</option>
+                            <option value="fall">Fall</option>
+                            <option value="winter">Winter</option>
+                            <option value="spring">Spring</option>
+                            <option value="summer">Summer</option>
+                        </select>
+                        <span class="filter-help"
+                            >Choose when you want to start</span
+                        >
                     </div>
 
                     <div class="filter-group">
                         <label for="distanceFilter">Max Distance</label>
                         <select id="distanceFilter" class="filter-select">
+                            <option value="100">Any Distance</option>
                             <option value="10">Within 10 km</option>
                             <option value="25">Within 25 km</option>
                             <option value="50">Within 50 km</option>
-                            <option value="100">Within 100 km</option>
                         </select>
+                        <span class="filter-help"
+                            >Maximum distance from your location</span
+                        >
                     </div>
 
                     <button type="submit" class="btn btn-primary filter-btn">
@@ -126,6 +171,16 @@
                         <div class="legend-item">
                             <span class="legend-marker multisport"></span>
                             <span>Multi-Sport</span>
+                        </div>
+                        <div class="legend-divider"></div>
+                        <div class="legend-explanation">
+                            <p class="legend-title">📍 Multiple Programs?</p>
+                            <p class="legend-text">
+                                Some locations (like Pierrefonds) offer multiple
+                                programs at the same facility. Click on the
+                                location marker or result card to see all
+                                available programs.
+                            </p>
                         </div>
                     </div>
                 </div>

@@ -44,10 +44,21 @@
     border-bottom: 3px solid var(--accent-gray);
 }
 
+.filter-help-text {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.filter-help-text p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 .filter-form {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.25rem;
     align-items: end;
 }
 
@@ -61,6 +72,13 @@
     font-weight: 600;
     font-size: 0.9rem;
     color: var(--deep-charcoal);
+}
+
+.filter-help {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: -0.25rem;
 }
 
 .filter-select {
@@ -91,10 +109,24 @@
 @media (max-width: 768px) {
     .filter-form {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .filter-bar {
         top: 60px;
+        padding: 1rem 0;
+    }
+
+    .filter-help-text {
+        display: none;
+    }
+
+    .filter-help {
+        display: none;
+    }
+
+    .filter-group {
+        gap: 0.25rem;
     }
 }
 
@@ -138,10 +170,12 @@
     top: 1rem;
     right: 1rem;
     background: white;
-    padding: 1rem;
+    padding: 1.25rem;
     border-radius: 12px;
     box-shadow: var(--shadow-md);
     z-index: 500;
+    max-width: 280px;
+    border: 2px solid var(--accent-gray);
 }
 
 .map-legend h4 {
@@ -149,6 +183,8 @@
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    color: var(--deep-charcoal);
+    font-weight: 700;
 }
 
 .legend-item {
@@ -157,14 +193,17 @@
     gap: 0.75rem;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--deep-charcoal);
 }
 
 .legend-marker {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
 }
 
 .legend-marker.soccer {
@@ -177,6 +216,44 @@
 
 .legend-marker.multisport {
     background: #f6c443;
+}
+
+.legend-divider {
+    height: 1px;
+    background: var(--accent-gray);
+    margin: 0.75rem 0;
+}
+
+.legend-explanation {
+    background: var(--warm-white);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-red);
+    margin-top: 0.5rem;
+}
+
+.legend-title {
+    font-weight: 700;
+    color: var(--primary-red);
+    font-size: 0.85rem;
+    margin-bottom: 0.4rem;
+}
+
+.legend-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .map-legend {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem 0;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -293,6 +370,10 @@
     background: linear-gradient(135deg, #f6c443, #ee9b00);
 }
 
+.result-badge.multi-program {
+    background: linear-gradient(135deg, #d62828 0%, #2b59c3 50%, #f6c443 100%);
+}
+
 .result-content h3 {
     font-size: 1.4rem;
     margin-bottom: 0.75rem;
@@ -308,11 +389,24 @@
     margin-bottom: 0.5rem;
 }
 
+.result-programs {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
 .result-description {
     color: #666;
     font-size: 0.95rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     line-height: 1.6;
+}
+
+.result-season {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
 }
 
 .result-footer {
