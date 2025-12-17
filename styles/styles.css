@@ -133,6 +133,7 @@ h3 {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: var(--shadow-xs);
+    border-top: none;
     z-index: 1000;
     transition: var(--transition-smooth);
     height: 80px; /* Slightly taller for premium feel */
@@ -154,7 +155,7 @@ h3 {
 }
 
 .header.transparent .language-toggle .lang-btn.active {
-    color: var(--primary-red);
+    color: var(--deep-charcoal);
 }
 
 .header-content {
@@ -221,12 +222,12 @@ h3 {
 
 .header.transparent .nav-link:hover,
 .header.transparent .nav-link.active {
-    color: var(--primary-red);
+    color: var(--deep-charcoal);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-red);
+    color: var(--deep-charcoal);
 }
 
 .nav-link.active::after {
@@ -236,7 +237,7 @@ h3 {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--primary-red);
+    background: var(--deep-charcoal);
     border-radius: 2px;
 }
 
@@ -258,7 +259,7 @@ h3 {
 }
 
 .lang-btn.active {
-    color: var(--primary-red);
+    color: var(--deep-charcoal);
 }
 
 .lang-divider {
@@ -400,6 +401,7 @@ h3 {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    filter: brightness(1.2);
 }
 
 /* Section Dividers - Premium Curved Transitions */
@@ -462,8 +464,8 @@ h3 {
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(26, 26, 26, 0.6) 0%,
-        rgba(214, 40, 40, 0.4) 100%
+        rgba(26, 26, 26, 0.4) 0%,
+        rgba(214, 40, 40, 0.3) 100%
     );
     z-index: 1;
 }
@@ -473,8 +475,13 @@ h3 {
     z-index: 2;
     text-align: center;
     color: white;
-    padding: 2rem;
-    max-width: 800px;
+    padding: 2rem 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .hero-title {
@@ -636,35 +643,22 @@ h3 {
 .highlights .container {
     position: relative;
     z-index: 3;
+    background: transparent;
 }
 
 /* Programs Header with Bold Visual */
 .programs-header-wrapper {
     position: relative;
     text-align: center;
-}
-
-.programs-header-wrapper {
-    position: relative;
-    padding: 4rem 0 2rem;
+    padding: 9rem 0 2rem;
+    background: transparent;
 }
 
 /* Programs header graphic removed for cleaner design */
 
 /* Color Blob Behind Programs Title */
 .programs-color-blob {
-    position: absolute;
-    width: 600px;
-    height: 400px;
-    background: linear-gradient(135deg, var(--primary-red), var(--support-yellow));
-    border-radius: 50%;
-    top: -200px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: -1;
-    opacity: 0.15;
-    filter: blur(60px);
-    pointer-events: none;
+    display: none;
 }
 
 /* Testimonials Photo Background */
@@ -834,23 +828,16 @@ h3 {
 
 .highlights {
     padding: var(--spacing-3xl) 0; /* 80px - premium breathing room */
-    background: white;
+    background: transparent;
     position: relative;
     overflow: visible;
-    margin-top: 5rem; /* 80px - increased breathing room */
+    margin-top: 0;
     margin-bottom: 5rem;
 }
 
 /* Overlapping Circles that connect sections - subtle and natural */
 .overlapping-circle {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-red), var(--support-yellow));
-    z-index: 1;
-    pointer-events: none;
-    filter: blur(30px);
-    opacity: 0.25;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
 .overlap-1 {
@@ -938,12 +925,19 @@ h3 {
 
 /* Connecting Arrows removed - using natural transitions and images instead */
 
+.highlights-wrapper {
+    background: linear-gradient(to bottom, white 0%, white 40%, #c0c0c0 100%);
+    padding-top: 6rem;
+}
+
 .highlights-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-2xl); /* 64px - premium spacing */
     position: relative;
     z-index: 3;
+    margin-top: 0;
+    background: transparent;
 }
 
 .highlight-card {
@@ -955,40 +949,50 @@ h3 {
     text-align: center;
     padding: var(--spacing-2xl); /* 64px - double the padding */
     border-radius: var(--border-radius-lg); /* 24px for softer feel */
-    background: white;
+    background: transparent;
     transition: var(--transition-smooth);
-    box-shadow: var(--shadow-xs);
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: none;
+    border: none;
+    outline: none;
 }
 
 .highlight-card:hover {
     transform: translateY(-10px) scale(1.01);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(214, 40, 40, 0.1);
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+.highlight-card:focus {
+    outline: none;
+    border: none;
 }
 
 .giant-highlight-icon {
-    width: 150px;
-    height: 150px;
+    width: 170px;
+    height: 170px;
     margin: 0 auto 2rem;
     background: linear-gradient(
-        135deg,
+        to bottom,
         var(--primary-red),
-        var(--support-yellow)
+        #ff9500
     );
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 0 15px 40px rgba(214, 40, 40, 0.5);
+    box-shadow: 0 0 20px rgba(214, 40, 40, 0.6);
     transition: var(--transition-smooth);
-    border: 6px solid white;
+    border: 3px solid white;
+    outline: none;
 }
 
 .highlight-card:hover .giant-highlight-icon {
     transform: scale(1.2) rotate(10deg);
-    box-shadow: 0 20px 50px rgba(214, 40, 40, 0.6);
+    box-shadow: 0 0 30px rgba(214, 40, 40, 0.8);
+    border: 3px solid white;
+    outline: none;
 }
 
 .giant-highlight-icon svg {
@@ -1014,7 +1018,7 @@ h3 {
 
 .program-preview {
     padding: var(--spacing-3xl) 0; /* 80px - premium spacing */
-    background: var(--light-gray);
+    background: transparent;
     margin-top: 5rem; /* 80px - increased breathing room */
     margin-bottom: 5rem;
 }
@@ -1027,13 +1031,14 @@ h3 {
 
 .carousel-container {
     overflow: hidden;
-    padding: 1rem 0;
+    padding: 1rem 0 15rem 0;
 }
 
 .carousel-track {
     display: flex;
     gap: 2rem;
     transition: transform 0.5s ease;
+    background: transparent;
 }
 
 .program-card {
@@ -1041,14 +1046,14 @@ h3 {
     background: white;
     border-radius: var(--border-radius-lg); /* 24px */
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+    box-shadow: none;
     transition: var(--transition-smooth);
     border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .program-card:hover {
     transform: translateY(-12px) scale(1.01);
-    box-shadow: var(--shadow-xl);
+    box-shadow: none;
     border-color: rgba(214, 40, 40, 0.15);
 }
 
@@ -1391,7 +1396,7 @@ h3 {
 
 /* Alternating backgrounds for visual flow */
 .program-preview {
-    background: var(--light-gray);
+    background: transparent;
 }
 
 .weekly-news {
@@ -1399,7 +1404,7 @@ h3 {
 }
 
 .highlights {
-    background: white;
+    background: transparent;
 }
 
 /* Smooth transitions between sections */
@@ -1408,11 +1413,7 @@ section {
 }
 
 .about-teaser {
-    background: linear-gradient(
-        135deg,
-        var(--primary-red-light) 0%,
-        var(--primary-red-dark) 100%
-    );
+    background: var(--primary-red);
 }
 
 @media (max-width: 767px) {
@@ -1483,11 +1484,7 @@ section {
 
 .about-teaser {
     padding: var(--spacing-3xl) 0; /* 80px */
-    background: linear-gradient(
-        135deg,
-        var(--primary-red-light) 0%,
-        var(--primary-red-dark) 100%
-    );
+    background: var(--primary-red);
     color: white;
     text-align: center;
     position: relative;
@@ -1514,26 +1511,17 @@ section {
 }
 
 .about-teaser::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        circle at 30% 50%,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%
-    );
-    pointer-events: none;
+    display: none;
 }
 
 .about-teaser-content {
     max-width: 800px; /* Wider for better readability */
-    margin: 0 auto;
+    margin: 4rem auto;
     position: relative;
     z-index: 1;
     padding: 0 var(--spacing-md); /* Buffer from edges */
+    min-height: 300px;
+    background: var(--primary-red);
 }
 
 .about-teaser h2 {
