@@ -2,6 +2,10 @@
    Programs Page Specific Styles
    ================================ */
 
+.container {
+    padding: 0;
+}
+
 .page-hero {
     position: relative;
     min-height: 70vh;
@@ -21,7 +25,6 @@
     right: 0;
     bottom: 0;
     z-index: 0;
-    opacity: 0.25;
 }
 
 .page-hero-image-bg img {
@@ -29,13 +32,21 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    filter: brightness(1.2);
 }
 
 .page-hero-overlay {
     position: absolute;
-    inset: 0;
-    background: rgba(26, 26, 26, 0.4);
-    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 26, 0.4) 0%,
+        rgba(214, 40, 40, 0.3) 100%
+    );
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -70,38 +81,42 @@
 .tab-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 4rem;
     margin-bottom: 3rem;
     flex-wrap: wrap;
 }
 
 .tab-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 1rem 2rem;
+    padding: 18px 40px;
     background: white;
-    border: 2px solid #ececec;
-    border-radius: 16px;
+    border: none;
+    border-radius: 30px;
     font-family: inherit;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--deep-charcoal);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: black;
     cursor: pointer;
-    transition: var(--transition);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     min-height: 56px;
+    min-width: 300px;
+    width: 300px;
+    text-decoration: none;
+    box-sizing: border-box;
+    justify-content: center;
 }
 
 .tab-btn:hover {
-    border-color: var(--primary-red);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .tab-btn.active {
     background: var(--primary-red);
-    border-color: var(--primary-red);
-    color: white;
+    border: none;
+    color: black;
 }
 
 .tab-icon {
@@ -242,6 +257,13 @@
     padding: 0 2rem 2rem;
 }
 
+.accordion-group .btn-primary {
+    border-radius: 50px;
+    display: block;
+    margin: 1.5rem auto 0;
+    text-align: center;
+}
+
 /* Program Details */
 .program-details {
     display: flex;
@@ -342,7 +364,7 @@
    ================================ */
 
 .complementary-services {
-    padding: var(--spacing-3xl) 0;
+    padding: var(--spacing-3xl) 0 0 0;
     background: var(--warm-white);
 }
 
@@ -493,16 +515,66 @@
 
 .services-cta {
     text-align: center;
-    padding: var(--spacing-2xl);
-    background: white;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow-sm);
+    padding: 4rem 0 6rem 0;
+    background: var(--primary-red);
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.services-cta::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(255, 215, 0, 0.3) 50%,
+        #ffd700 100%
+    );
+    pointer-events: none;
 }
 
 .services-cta p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    margin-bottom: var(--spacing-lg);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: black;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.services-cta .btn-primary {
+    background: white;
+    color: black;
+    padding: 18px 40px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 300px;
+    width: 300px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    box-sizing: border-box;
+    margin: 2rem auto 0;
+}
+
+.services-cta .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {

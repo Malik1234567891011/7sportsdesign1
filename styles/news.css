@@ -8,7 +8,7 @@
 /* News Hero Section */
 .news-hero {
     position: relative;
-    min-height: 400px; /* Taller for premium feel */
+    min-height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,18 +17,26 @@
     overflow: hidden;
 }
 
-.news-hero::before {
-    content: "";
+/* Hero Background Image */
+.page-hero-image-bg {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><path d="M0,150 Q300,100 600,150 T1200,150 L1200,300 L0,300 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-    opacity: 0.3;
+    z-index: 0;
 }
 
-.news-hero-overlay {
+.page-hero-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1.2);
+}
+
+.news-hero-overlay,
+.page-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,44 +44,38 @@
     bottom: 0;
     background: linear-gradient(
         135deg,
-        rgba(17, 17, 17, 0.5) 0%,
-        rgba(214, 40, 40, 0.35) 100%
-    );
-    z-index: 1;
-}
-
-.news-hero::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        circle at 30% 50%,
-        rgba(255, 255, 255, 0.1) 0%,
-        transparent 50%
+        rgba(26, 26, 26, 0.4) 0%,
+        rgba(214, 40, 40, 0.3) 100%
     );
     z-index: 1;
     pointer-events: none;
 }
 
-.news-hero-content {
+.news-hero-content,
+.page-hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
-    padding: var(--spacing-2xl); /* 64px */
+    padding: 6rem 1rem 2rem;
     max-width: 900px;
+    color: #000;
 }
 
-.news-hero-content h1 {
-    margin-bottom: 1rem;
-    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+.news-hero-content h1,
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    text-shadow: none;
+    color: #000;
 }
 
-.news-hero-content p {
-    font-size: 1.2rem;
-    text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.3);
+.news-hero-content p,
+.page-hero-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin: 0;
+    opacity: 1;
+    color: #000;
 }
 
 /* Urgent Announcements Section */
@@ -198,50 +200,46 @@
     padding: var(--spacing-2xl) 0; /* 64px */
     background: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    position: sticky;
-    top: 80px;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.news-filters .container {
+    padding: 0;
 }
 
 .filter-tabs {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
 
 .filter-tab {
-    padding: 12px 32px; /* Increased padding */
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 18px 40px;
+    border: none;
     background: white;
-    color: var(--deep-charcoal);
-    border-radius: 28px; /* More rounded */
-    font-weight: 600;
+    color: black;
+    border-radius: 30px;
+    font-weight: 700;
     cursor: pointer;
-    transition: var(--transition-smooth);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     font-family: inherit;
-    font-size: 0.9rem;
-    letter-spacing: 0.01em;
-    box-shadow: var(--shadow-xs);
+    font-size: 1.15rem;
+    min-width: 200px;
+    width: auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .filter-tab:hover {
-    border-color: var(--primary-red);
-    color: var(--primary-red);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .filter-tab.active {
-    background: linear-gradient(
-        135deg,
-        var(--primary-red-light) 0%,
-        var(--primary-red-dark) 100%
-    );
-    color: white;
-    border-color: transparent;
-    box-shadow: var(--shadow-red);
+    background: var(--primary-red);
+    color: black;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transform: translateY(-2px);
 }
 

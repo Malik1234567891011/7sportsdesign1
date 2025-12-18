@@ -13,6 +13,7 @@
             href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         />
         <link rel="stylesheet" href="../styles/styles.css" />
+        <link rel="stylesheet" href="../styles/landing-page-client.css" />
         <link rel="stylesheet" href="../styles/find-program.css" />
     </head>
     <body>
@@ -21,8 +22,7 @@
             <div class="container">
                 <div class="header-content">
                     <a href="../index.html" class="logo">
-                        <span class="logo-number">7</span>
-                        <span class="logo-text">Sports</span>
+                        <img src="../7sports_Noir_300x150.png" alt="7Sports" />
                     </a>
                     <nav class="desktop-nav">
                         <a href="../index.html" class="nav-link">Home</a>
@@ -45,8 +45,13 @@
         </header>
 
         <!-- Page Hero -->
-        <section class="page-hero-small">
-            <div class="container">
+        <section class="page-hero-small page-hero">
+            <!-- Hero Background Image -->
+            <div class="page-hero-image-bg">
+                <img src="../assets/images/Photo/Photos Multi St-Jean/20230731_175809.jpg" alt="Kids in sports programs" />
+            </div>
+            <div class="page-hero-overlay"></div>
+            <div class="page-hero-content">
                 <h1>Find Your Perfect Program</h1>
                 <p>Use the filters below to discover programs near you</p>
             </div>
@@ -70,9 +75,6 @@
                             <option value="hockey">Dek Hockey</option>
                             <option value="multisport">Multi-Sport</option>
                         </select>
-                        <span class="filter-help"
-                            >Choose the sport your child wants to play</span
-                        >
                     </div>
 
                     <div class="filter-group">
@@ -83,9 +85,6 @@
                             <option value="4-6">4-6 years</option>
                             <option value="7-12">7-12 years</option>
                         </select>
-                        <span class="filter-help"
-                            >Select your child's age range</span
-                        >
                     </div>
 
                     <div class="filter-group">
@@ -99,9 +98,6 @@
                             <option value="Verdun">Verdun</option>
                             <option value="Plateau Mont-Royal">Plateau</option>
                         </select>
-                        <span class="filter-help"
-                            >Filter by city or region</span
-                        >
                     </div>
 
                     <div class="filter-group">
@@ -113,9 +109,6 @@
                             <option value="spring">Spring</option>
                             <option value="summer">Summer</option>
                         </select>
-                        <span class="filter-help"
-                            >Choose when you want to start</span
-                        >
                     </div>
 
                     <div class="filter-group">
@@ -126,26 +119,9 @@
                             <option value="25">Within 25 km</option>
                             <option value="50">Within 50 km</option>
                         </select>
-                        <span class="filter-help"
-                            >Maximum distance from your location</span
-                        >
                     </div>
 
-                    <button type="submit" class="btn btn-primary filter-btn">
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            style="
-                                width: 20px;
-                                height: 20px;
-                                margin-right: 0.5rem;
-                            "
-                        >
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
+                    <button type="submit" class="btn btn-cta-large filter-btn">
                         Search Programs
                     </button>
                 </form>
@@ -240,8 +216,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -293,8 +269,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -346,8 +322,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -397,8 +373,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -450,8 +426,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -503,8 +479,8 @@
                                     >
                                     <a
                                         href="#"
-                                        class="btn btn-primary btn-small"
-                                        >Register →</a
+                                        class="btn btn-cta-large btn-small"
+                                        >Register</a
                                     >
                                 </div>
                             </div>
@@ -513,11 +489,21 @@
 
                     <div class="view-all-section">
                         <p>Looking for more options?</p>
-                        <a href="locations.html" class="btn btn-secondary"
+                        <a href="locations.html" class="btn btn-cta-large"
                             >View All Programs by City</a
                         >
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- CTA Footer -->
+        <section class="footer-cta">
+            <div class="container">
+                <h2>Ready to Register?</h2>
+                <a href="find-program.html" class="btn btn-cta-large"
+                    >S'inscrire</a
+                >
             </div>
         </section>
 
@@ -527,8 +513,7 @@
                 <div class="footer-grid">
                     <div class="footer-col">
                         <div class="logo">
-                            <span class="logo-number">7</span>
-                            <span class="logo-text">Sports</span>
+                            <img src="../7sports_Noir_300x150.png" alt="7Sports" />
                         </div>
                         <p>
                             Building confidence, teamwork, and skills through

@@ -2,35 +2,72 @@
    Find My Program Page Styles
    ================================ */
 
-.page-hero-small {
+.page-hero-small,
+.page-hero {
     position: relative;
-    min-height: 50vh;
+    min-height: 70vh;
     background: linear-gradient(135deg, #d62828 0%, #f77f00 50%, #f6c443 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    overflow: hidden;
 }
 
-.page-hero-small .container {
+/* Hero Background Image */
+.page-hero-image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+}
+
+.page-hero-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(1.2);
+}
+
+.page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(26, 26, 26, 0.4) 0%,
+        rgba(214, 40, 40, 0.3) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+}
+
+.page-hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     padding: 6rem 1rem 2rem;
+    text-align: center;
+    color: #000;
 }
 
-.page-hero-small h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     margin: 0 0 0.5rem;
     font-weight: 800;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
-    color: #fff;
+    text-shadow: none;
+    color: #000;
 }
 
-.page-hero-small p {
-    font-size: 1.1rem;
+.page-hero-content p {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     margin: 0;
-    opacity: 0.95;
-    color: #fff;
+    opacity: 1;
+    color: #000;
 }
 
 /* Filter Bar */
@@ -38,9 +75,6 @@
     background: white;
     box-shadow: var(--shadow-md);
     padding: 1.5rem 0;
-    position: sticky;
-    top: 70px;
-    z-index: 100;
     border-bottom: 3px solid var(--accent-gray);
 }
 
@@ -56,16 +90,19 @@
 }
 
 .filter-form {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.25rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
     align-items: end;
+    justify-content: center;
 }
 
 .filter-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    flex: 0 1 auto;
+    min-width: 150px;
 }
 
 .filter-group label {
@@ -99,21 +136,44 @@
 }
 
 .filter-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--primary-red);
+    color: black;
+    padding: 18px 40px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 200px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
     white-space: nowrap;
-    min-height: 48px;
+    min-height: 56px;
+    flex-shrink: 0;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+    .filter-form {
+        flex-wrap: wrap;
+    }
 }
 
 @media (max-width: 768px) {
     .filter-form {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 1rem;
     }
 
     .filter-bar {
-        top: 60px;
         padding: 1rem 0;
     }
 
@@ -127,6 +187,11 @@
 
     .filter-group {
         gap: 0.25rem;
+        min-width: 100%;
+    }
+
+    .filter-btn {
+        width: 100%;
     }
 }
 
@@ -436,6 +501,11 @@
     margin-bottom: 1rem;
     color: #666;
     font-size: 1.1rem;
+}
+
+.view-all-section .btn-cta-large {
+    min-width: 400px;
+    width: 400px;
 }
 
 /* Leaflet Custom Styles */

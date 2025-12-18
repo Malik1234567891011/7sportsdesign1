@@ -9,6 +9,7 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="../styles/styles.css" />
+        <link rel="stylesheet" href="../styles/landing-page-client.css" />
         <link rel="stylesheet" href="../styles/news.css" />
     </head>
     <body>
@@ -17,8 +18,7 @@
             <div class="container">
                 <div class="header-content">
                     <a href="../index.html" class="logo">
-                        <span class="logo-number">7</span>
-                        <span class="logo-text">Sports</span>
+                        <img src="../7sports_Noir_300x150.png" alt="7Sports" />
                     </a>
                     <nav class="desktop-nav">
                         <a href="../index.html" class="nav-link">Home</a>
@@ -41,9 +41,13 @@
         </header>
 
         <!-- Page Hero -->
-        <section class="news-hero">
-            <div class="news-hero-overlay"></div>
-            <div class="news-hero-content">
+        <section class="news-hero page-hero">
+            <!-- Hero Background Image -->
+            <div class="page-hero-image-bg">
+                <img src="../assets/images/Photo/Photos Multi St-Jean/20230731_181030.jpg" alt="Kids playing sports" />
+            </div>
+            <div class="news-hero-overlay page-hero-overlay"></div>
+            <div class="news-hero-content page-hero-content">
                 <h1>7Sports News & Highlights</h1>
                 <p>Stay updated with the latest from our community</p>
             </div>
@@ -310,6 +314,16 @@
             </div>
         </section>
 
+        <!-- CTA Footer -->
+        <section class="footer-cta">
+            <div class="container">
+                <h2>Ready to Register?</h2>
+                <a href="find-program.html" class="btn btn-cta-large"
+                    >S'inscrire</a
+                >
+            </div>
+        </section>
+
         <!-- Article Detail Modal (hidden by default, shown when article link is clicked) -->
         <div class="article-modal" id="articleModal">
             <div class="article-modal-content">
@@ -328,8 +342,7 @@
                 <div class="footer-grid">
                     <div class="footer-col">
                         <div class="logo">
-                            <span class="logo-number">7</span>
-                            <span class="logo-text">Sports</span>
+                            <img src="../7sports_Noir_300x150.png" alt="7Sports" />
                         </div>
                         <p>
                             Building confidence, teamwork, and skills through
