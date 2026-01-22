@@ -3,6 +3,16 @@
    Overrides for more compact, playful, kid-friendly design
    ================================ */
 
+/* More Sugar Font */
+@font-face {
+    font-family: 'More Sugar';
+    src: url('../fonts/more_sugar/MoreSugar-Regular.otf') format('opentype'),
+         url('../fonts/more_sugar/MoreSugar-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Hide navigation header */
 .header {
     display: none !important;
@@ -10,29 +20,38 @@
 
 /* Hero Section - Centered, Bold, Direct */
 .hero-title-main {
+    font-family: 'More Sugar', cursive;
     font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
+    font-weight: 400;
     color: white;
     text-align: center;
     margin: 0 auto 1rem;
-    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
+    -webkit-text-stroke: 4px black;
+    text-stroke: 4px black;
+    text-shadow: none;
     white-space: nowrap;
-    letter-spacing: 0.08em;
+    letter-spacing: -0.02em;
+    word-spacing: -0.1em;
     width: 100%;
     max-width: 100%;
     display: block;
     line-height: 1.2;
     padding: 0;
+    text-transform: uppercase;
 }
 
 .hero-age-range {
+    font-family: 'More Sugar', cursive;
     font-size: clamp(2.5rem, 6vw, 4rem);
-    font-weight: 800;
+    font-weight: 400;
     color: white;
     text-align: center;
     margin: 0 auto 2rem;
-    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
-    letter-spacing: 0.05em;
+    -webkit-text-stroke: 4px black;
+    text-stroke: 4px black;
+    text-shadow: none;
+    letter-spacing: -0.02em;
+    word-spacing: -0.1em;
     width: 100%;
     max-width: 100%;
     line-height: 1.2;
@@ -86,7 +105,7 @@
 
 .hero-buttons-centered {
     display: flex;
-    gap: 7rem;
+    gap: 2rem;
     justify-content: center;
     flex-wrap: nowrap;
     margin-top: 2rem;
@@ -97,7 +116,7 @@
     padding: 18px 40px;
     font-size: 1.15rem;
     font-weight: 700;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -231,6 +250,162 @@
 .testimonial-card {
     background: white !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    overflow: visible;
+}
+
+.testimonial-clap {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 4rem;
+    z-index: 2;
+    transform: rotate(-15deg);
+}
+
+/* Messages Importants Section */
+.messages-importants-section {
+    background: white;
+    padding: 4rem 0 2rem;
+    position: relative;
+}
+
+.messages-top-bar {
+    height: 30px;
+    background: linear-gradient(135deg, #2d5016 0%, #3a6b1f 100%);
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.messages-title {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    color: var(--deep-charcoal);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    white-space: nowrap;
+}
+
+.siren-icon {
+    width: clamp(2.5rem, 5vw, 4rem);
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.message-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    position: relative;
+    min-height: 400px;
+}
+
+.message-location {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    color: var(--deep-charcoal);
+    text-align: center;
+    margin-bottom: 0;
+    letter-spacing: -0.02em;
+    position: absolute;
+    top: 2rem;
+    left: 0;
+    right: 0;
+}
+
+.message-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.message-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+}
+
+.message-icon-img {
+    width: 140px;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    align-self: center;
+}
+
+.message-text-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+.message-text {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--deep-charcoal);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.message-link {
+    color: var(--deep-charcoal);
+    text-decoration: underline;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    display: inline-block;
+}
+
+.message-link:hover {
+    color: var(--primary-red);
+}
+
+.message-arrow {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--deep-charcoal);
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--deep-charcoal);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--support-yellow);
+    transform: scale(1.2);
+}
+
+.messages-gradient-bar {
+    height: 60px;
+    background: linear-gradient(90deg, var(--primary-red) 0%, #ff9500 100%);
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .testimonials-balls {
@@ -300,7 +475,7 @@
     padding: 18px 40px;
     font-size: 1.15rem;
     font-weight: 700;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -347,7 +522,7 @@
     padding: 18px 40px;
     font-size: 1.15rem;
     font-weight: 700;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -381,6 +556,17 @@
 
 .section-title {
     margin-bottom: 2rem !important;
+}
+
+/* Programs Section Title - More Sugar Font */
+.program-preview .section-title {
+    font-family: 'More Sugar', cursive;
+    font-weight: 400;
+    color: var(--deep-charcoal);
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
+    text-shadow: none;
+    letter-spacing: -0.02em;
 }
 
 .section-subtitle {
